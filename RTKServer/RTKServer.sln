@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTKServer", "RTKServer\RTKServer.csproj", "{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGPS", "SharpGps\SharpGPS.csproj", "{8516BA0A-3E52-4770-9D99-0C866B7E513B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{17594A67-91CE-4591-8FAA-FE778F25B84E}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\SharpMap.CoordinateSystems.dll = Dependencies\SharpMap.CoordinateSystems.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo_WinForms", "Demo_WinForms\Demo_WinForms.csproj", "{58046503-369B-49B3-B9B3-D50144F7A368}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kevincwq.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Demo_WinForms\\Demo_WinForms.csproj
+		SccProjectName1 = Demo_WinForms
+		SccLocalPath1 = Demo_WinForms
+		SccProjectUniqueName2 = RTKServer\\RTKServer.csproj
+		SccProjectName2 = RTKServer
+		SccLocalPath2 = RTKServer
+		SccProjectUniqueName3 = SharpGps\\SharpGPS.csproj
+		SccProjectName3 = SharpGps
+		SccLocalPath3 = SharpGps
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug PocketPC|Any CPU = Debug PocketPC|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		WindowsOnly|Any CPU = WindowsOnly|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Debug PocketPC|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Debug PocketPC|Any CPU.Build.0 = Debug|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.WindowsOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{5A94359F-D68B-4E8B-8C48-C9AA0A0865A4}.WindowsOnly|Any CPU.Build.0 = Release|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Debug PocketPC|Any CPU.ActiveCfg = Debug|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Debug PocketPC|Any CPU.Build.0 = Debug|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.WindowsOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{8516BA0A-3E52-4770-9D99-0C866B7E513B}.WindowsOnly|Any CPU.Build.0 = Release|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Debug PocketPC|Any CPU.ActiveCfg = Debug PocketPC|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Debug PocketPC|Any CPU.Build.0 = Debug PocketPC|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.WindowsOnly|Any CPU.ActiveCfg = Debug PocketPC|Any CPU
+		{58046503-369B-49B3-B9B3-D50144F7A368}.WindowsOnly|Any CPU.Build.0 = Debug PocketPC|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
