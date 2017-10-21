@@ -36,7 +36,7 @@
     //#define BI
     //#define TRI
     //#define QUADP
-    //#define QUADX
+    #define QUADX
     //#define Y4
     //#define Y6
     //#define HEX6
@@ -125,7 +125,7 @@
       //#define MONGOOSE1_0     // mongoose 1.0    http://store.ckdevices.com/
       //#define CRIUS_LITE      // Crius MultiWii Lite
       //#define CRIUS_SE        // Crius MultiWii SE
-      //#define CRIUS_SE_v2_0   // Crius MultiWii SE 2.0 with MPU6050, HMC5883 and BMP085
+      #define CRIUS_SE_v2_0   // Crius MultiWii SE 2.0 with MPU6050, HMC5883 and BMP085
       //#define OPENLRSv2MULTI  // OpenLRS v2 Multi Rc Receiver board including ITG3205 and ADXL345
       //#define BOARD_PROTO_1   // with MPU6050 + HMC5883L + MS baro
       //#define BOARD_PROTO_2   // with MPU6050 + slave  MAG3110 + MS baro
@@ -669,7 +669,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
                                    // note: Now a GPS can share MSP on the same port. The only constrain is to not use it simultaneously, and use the same port speed.
 
     // avoid using 115200 baud because with 16MHz arduino the 115200 baudrate have more than 2% speed error (57600 have 0.8% error)
-    #define GPS_BAUD   57600       // GPS_BAUD will override SERIALx_COM_SPEED for the selected port
+    // #define GPS_BAUD   57600       // GPS_BAUD will override SERIALx_COM_SPEED for the selected port
 
    /* GPS protocol 
        NMEA  - Standard NMEA protocol GGA, GSA and RMC  sentences are needed
@@ -685,16 +685,15 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
     //#define INIT_MTK_GPS        // initialize MTK GPS for using selected speed, 5Hz update rate and GGA & RMC sentence or binary settings
 
 
-    /* I2C GPS device made with an independant arduino + GPS device
-       including some navigation functions
+    /* I2C GPS device made with an independant arduino + GPS device including some navigation functions
        contribution from EOSBandi   http://code.google.com/p/i2c-gps-nav/ 
        You have to use at least I2CGpsNav code r33 */
     /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
 
-    //#define I2C_GPS
+    #define I2C_GPS
 
     // If your I2C GPS board has Sonar support enabled
-    //#define I2C_GPS_SONAR
+    #define I2C_GPS_SONAR
 
     /* indicate a valid GPS fix with at least 5 satellites by flashing the LED  - Modified by MIS - Using stable LED (YELLOW on CRIUS AIO) led work as sat number indicator 
       - No GPS FIX -> LED blink at speed of incoming GPS frames
