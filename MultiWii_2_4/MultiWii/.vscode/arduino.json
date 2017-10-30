@@ -1,0 +1,6 @@
+{
+    "port": "/dev/cu.CRIUS_BT-DevB",
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328",
+    "sketch": "MultiWii.ino"
+}

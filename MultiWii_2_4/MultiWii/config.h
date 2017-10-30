@@ -37,7 +37,7 @@
 //#define TRI
 //#define QUADP
 #define QUADX
-//#define Y4
+//#define Y4P
 //#define Y6
 //#define HEX6
 //#define HEX6X
@@ -661,7 +661,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    in NMEA mode the GPS must be configured to output GGA and RMC NMEA sentences (which is generally the default conf for most GPS devices)
    at least 5Hz update rate. uncomment the first line to select the GPS serial port of the arduino */
 
-//#define GPS_SERIAL 2         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
+// #define GPS_SERIAL 0         // should be 2 for flyduino v2. It's the serial port number on arduino MEGA
 // must be 0 for PRO_MINI (ex GPS_PRO_MINI)
 // note: Now a GPS can share MSP on the same port. The only constrain is to not use it simultaneously, and use the same port speed.
 
@@ -687,25 +687,24 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    You have to use at least I2CGpsNav code r33 */
 /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
 
-//#define I2C_GPS
+#define I2C_GPS
 
 // If your I2C GPS board has Sonar support enabled
-//#define I2C_GPS_SONAR
+#define I2C_GPS_SONAR
 
 /* indicate a valid GPS fix with at least 5 satellites by flashing the LED  - Modified by MIS - Using stable LED (YELLOW on CRIUS AIO) led work as sat number indicator
   - No GPS FIX -> LED blink at speed of incoming GPS frames
   - Fix and sat no. bellow 5 -> LED off
   - Fix and sat no. >= 5 -> LED blinks, one blink for 5 sat, two blinks for 6 sat, three for 7 ... */
-//#define GPS_LED_INDICATOR
+#define GPS_LED_INDICATOR
 
 //Enables the MSP_WP command set , which is used by WinGUI for displaying an setting up navigation
-//#define USE_MSP_WP
+#define USE_MSP_WP
 
 // HOME position is reset at every arm, uncomment it to prohibit it (you can set home position with GyroCalibration)
 //#define DONT_RESET_HOME_AT_ARM
 
 /* GPS navigation can control the heading */
-
 // copter faces toward the navigation point, maghold must be enabled for it
 #define NAV_CONTROLS_HEADING       1    //(**)
 // true - copter comes in with tail first
@@ -807,13 +806,12 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define DISPLAY_COLUMNS 16
 /********************************    Navigation     ***********************************/
 /* keys to navigate the LCD menu */
-#define LCD_MENU_PREV 'p'
-#define LCD_MENU_NEXT 'n'
-#define LCD_VALUE_UP 'u'
-#define LCD_VALUE_DOWN 'd'
-
-#define LCD_MENU_SAVE_EXIT 's'
-#define LCD_MENU_ABORT 'x'
+//#define LCD_MENU_PREV 'p'
+//#define LCD_MENU_NEXT 'n'
+//#define LCD_VALUE_UP 'u'
+//#define LCD_VALUE_DOWN 'd'
+//#define LCD_MENU_SAVE_EXIT 's'
+//#define LCD_MENU_ABORT 'x'
 
 /**************************************************************************************/
 /***********************      LCD configuration menu         **************************/
@@ -888,22 +886,22 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
    vbat = [0;1023]*16/VBATSCALE
    must be associated with #define BUZZER ! */
 //#define VBAT              // uncomment this line to activate the vbat code
-#define VBATSCALE       131 // (*) (**) change this value if readed Battery voltage is different than real voltage
+//#define VBATSCALE       131 // (*) (**) change this value if readed Battery voltage is different than real voltage
 #define VBATNOMINAL     126 // 12,6V full battery nominal voltage - only used for lcd.telemetry
-#define VBATLEVEL_WARN1 107 // (*) (**) 10,7V
-#define VBATLEVEL_WARN2  99 // (*) (**) 9.9V
-#define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
-#define NO_VBAT          16 // Avoid beeping without any battery
-#define VBAT_OFFSET       0 // offset in 0.1Volts, gets added to voltage value  - useful for zener diodes
+//#define VBATLEVEL_WARN1 107 // (*) (**) 10,7V
+//#define VBATLEVEL_WARN2  99 // (*) (**) 9.9V
+//#define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
+//#define NO_VBAT          16 // Avoid beeping without any battery
+//#define VBAT_OFFSET       0 // offset in 0.1Volts, gets added to voltage value  - useful for zener diodes
 
 /* for V BAT monitoring of individual cells
  * enable both VBAT and VBAT_CELLS
  */
 //#define VBAT_CELLS
 #define VBAT_CELLS_NUM 0 // set this to the number of cells you monitor via analog pins
-#define VBAT_CELLS_PINS {A0, A1, A2, A3, A4, A5 } // set this to the sequence of analog pins
-#define VBAT_CELLS_OFFSETS {0, 50, 83, 121, 149, 177 } // in 0.1 volts, gets added to voltage value  - useful for zener diodes
-#define VBAT_CELLS_DIVS { 75, 122,  98, 18, 30, 37 } // divisor for proportional part according to resistors - larger value here gives smaller voltage
+//#define VBAT_CELLS_PINS {A0, A1, A2, A3, A4, A5 } // set this to the sequence of analog pins
+//#define VBAT_CELLS_OFFSETS {0, 50, 83, 121, 149, 177 } // in 0.1 volts, gets added to voltage value  - useful for zener diodes
+//#define VBAT_CELLS_DIVS { 75, 122,  98, 18, 30, 37 } // divisor for proportional part according to resistors - larger value here gives smaller voltage
 
 /********************************************************************/
 /****           powermeter (battery capacity monitoring)         ****/
@@ -915,10 +913,10 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
    Two options:
    1 - hard: - (uses hardware sensor, after configuration gives very good results)
    2 - soft: - (good results +-5% for plush and mystery ESCs @ 2S and 3S, not good with SuperSimple ESC)    */
-//#define POWERMETER_SOFT
-//#define POWERMETER_HARD
-//#define PSENSORNULL 510 /* (*) hard only: set to analogRead() value for zero current; for I=0A my sensor gives 1 / 2 Vss; that is approx 2.49Volt; */
-//#define PINT2mA 132     /* (*) hard: one integer step on arduino analog translates to mA (example 4.9 / 37 * 1000) ; soft: use fictional value, start with 100. for hard and soft : larger PINT2mA will get you larger value for power (mAh equivalent) */
+    //#define POWERMETER_SOFT
+    //#define POWERMETER_HARD
+    //#define PSENSORNULL 510 /* (*) hard only: set to analogRead() value for zero current; for I=0A my sensor gives 1 / 2 Vss; that is approx 2.49Volt; */
+    //#define PINT2mA 132     /* (*) hard: one integer step on arduino analog translates to mA (example 4.9 / 37 * 1000) ; soft: use fictional value, start with 100. for hard and soft : larger PINT2mA will get you larger value for power (mAh equivalent) */
     //#define WATTS // compute and display the actual watts (=Volt*Ampere) consumed - requires both POWERMETER_HARD and VBAT
 
     /********************************************************************/
@@ -927,7 +925,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 
     /* defines the neutral zone of throttle stick during altitude hold, default setting is
        +/-50 uncommend and change the value below if you want to change it. */
-#define ALT_HOLD_THROTTLE_NEUTRAL_ZONE    50
+    #define ALT_HOLD_THROTTLE_NEUTRAL_ZONE    50
     //#define ALT_HOLD_THROTTLE_MIDPOINT        1500  // in us    - if uncommented, this value is used in ALT_HOLD for throttle stick middle point instead of initialThrottleHold parameter.
 
 
@@ -969,14 +967,14 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
      * It must be 16 characters total,
      * The last 4 characters will be overwritten with the version number.
      */
-#define BOARD_NAME "MultiWii   V-.--"
+    #define BOARD_NAME "MultiWii   V-.--"
     //                  123456789.123456
 
     /*************      Support multiple configuration profiles in EEPROM     ************/
     //#define MULTIPLE_CONFIGURATION_PROFILES
 
     /*************      do no reset constants when change of flashed program is detected ***********/
-#define NO_FLASH_CHECK
+    #define NO_FLASH_CHECK
 
     /*************************************************************************************************/
     /*****************                                                                 ***************/
@@ -984,7 +982,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     /*****************                                                                 ***************/
     /*************************************************************************************************/
 
-#define VBAT_PRESCALER 16 // set this to 8 if vbatscale would exceed 255
+    #define VBAT_PRESCALER 16 // set this to 8 if vbatscale would exceed 255
 
     /**************************************************************************************/
     /********   special ESC with extended range [0-2000] microseconds  ********************/
@@ -1013,7 +1011,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     //#define MOTOR_STOP
 
     /* some radios have not a neutral point centered on 1500. can be changed here */
-#define MIDRC 1500
+    #define MIDRC 1500
 
     /***********************         Servo Refreshrates            ***********************/
     /* Default 50Hz Servo refresh rate*/
@@ -1070,12 +1068,12 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
      * This will disable use of the GUI, winGUI, android apps and any other program that makes use of the MSP.
      * You must find another way (like LCD_CONF) to tune the parameters or live with the defaults.
      * If you run a LCD/OLED via i2c or serial/Bluetooth, this is safe to use */
-    //#define SUPPRESS_ALL_SERIAL_MSP // saves approx 2700 bytes
+     #define SUPPRESS_ALL_SERIAL_MSP // saves approx 2700 bytes
 
     /* Remove handling of other serial commands.
      * This includes navigating via serial the lcd.configuration menu, lcd.telemetry and permanent.log .
      * Navigating via stick inputs on tx is not affected and will work the same.  */
-    //#define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
+     // #define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
 
     /**** suppress keeping the defaults for initial setup and reset in the code.
      * This requires a manual initial setup of the PIDs etc. or load and write from defaults.mwi;
@@ -1083,7 +1081,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
      */
     //#define SUPPRESS_DEFAULTS_FROM_GUI
 
-    //#define DISABLE_SETTINGS_TAB  // Saves ~400bytes on ProMini
+    #define DISABLE_SETTINGS_TAB  // Saves ~400bytes on ProMini
 
     /********************************************************************/
     /****           diagnostics                                      ****/
@@ -1134,8 +1132,8 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        Warning: this creates a special version of MultiWii Code
        You cannot fly with this special version. It is only to be used for calibrating ESCs
        Read How To at http://code.google.com/p/multiwii/wiki/ESCsCalibration */
-#define ESC_CALIB_LOW  MINCOMMAND
-#define ESC_CALIB_HIGH 2000
+    #define ESC_CALIB_LOW  MINCOMMAND
+    #define ESC_CALIB_HIGH 2000
     //#define ESC_CALIB_CANNOT_FLY  // uncomment to activate
 
     /****           internal frequencies                             ****/
@@ -1143,11 +1141,11 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        time base is main loop cycle time - a value of 6 means to trigger the action every 6th run through the main loop
        example: with cycle time of approx 3ms, do action every 6*3ms=18ms
        value must be [1; 65535] */
-#define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
-#define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
-#define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
-#define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
-#define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
+    #define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
+    #define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
+    #define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
+    #define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
+    #define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
 
     /********************************************************************/
     /****           Dynamic Motor/Prop Balancing                     ****/
@@ -1185,7 +1183,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     /**************************    WMP power pin     *******************************/
     //#define D12_POWER      // Use D12 on PROMINI to power sensors. Will disable servo[4] on D12
     /* disable use of the POWER PIN (allready done if the option RCAUXPIN12 is selected) */
-#define DISABLE_POWER_PIN
+    #define DISABLE_POWER_PIN
 
     /*************************************************************************************************/
     /****           END OF CONFIGURABLE PARAMETERS                                                ****/
