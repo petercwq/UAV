@@ -806,12 +806,13 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define DISPLAY_COLUMNS 16
 /********************************    Navigation     ***********************************/
 /* keys to navigate the LCD menu */
-#define LCD_MENU_PREV 'p'
-#define LCD_MENU_NEXT 'n'
-#define LCD_VALUE_UP 'u'
-#define LCD_VALUE_DOWN 'd'
-#define LCD_MENU_SAVE_EXIT 's'
-#define LCD_MENU_ABORT 'x'
+// #define LCD_USE_KEY // use key to operate
+// #define LCD_MENU_PREV 'p'
+// #define LCD_MENU_NEXT 'n'
+// #define LCD_VALUE_UP 'u'
+// #define LCD_VALUE_DOWN 'd'
+// #define LCD_MENU_SAVE_EXIT 's'
+// #define LCD_MENU_ABORT 'x'
 
 /**************************************************************************************/
 /***********************      LCD configuration menu         **************************/
