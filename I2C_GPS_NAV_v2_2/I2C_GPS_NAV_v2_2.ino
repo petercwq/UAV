@@ -23,12 +23,10 @@
 
 #define VERSION 22                                                         //Software version for cross checking
 
-
 #include "WireMW.h"
 #include "PIDCtrl.h"
 #include "PICtrl.h"
 #include "LeadFilter.h"
-
 
 #include "registers.h"                                                    //Register definitions
 #include "config.h"

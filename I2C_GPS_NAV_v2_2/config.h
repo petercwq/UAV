@@ -23,7 +23,7 @@
 //#define UBLOX
 //#define MTK_BINARY16
 //#define MTK_BINARY19
-#define INIT_MTK_GPS
+//#define INIT_MTK_GPS
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -38,8 +38,6 @@
 //Sonar type uncomment only one at a time
 //#define PINGPONG
 #define MAXBOTIX_PWM				// PWM output mode sonar
-
-
 
 // Default PID variables
 //////////////////////////////////////////////////////////////////////////////
