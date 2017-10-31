@@ -161,7 +161,9 @@ uint16_t calibratingA = 0;  // the calibration is done in the main loop. Calibra
 uint16_t calibratingB = 0;  // baro calibration = get new ground pressure value
 uint16_t calibratingG;
 int16_t  magHold,headFreeModeHold; // [-180;+180]
+#if defined(VBAT)
 uint8_t  vbatMin = VBATNOMINAL;  // lowest battery voltage in 0.1V steps
+#endif
 uint8_t  rcOptions[CHECKBOXITEMS];
 int32_t  AltHold; // in cm
 int16_t  sonarAlt;

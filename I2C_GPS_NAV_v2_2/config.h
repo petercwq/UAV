@@ -36,8 +36,8 @@
 #define SONAR						// USE Sonar
 
 //Sonar type uncomment only one at a time
-//#define PINGPONG
-#define MAXBOTIX_PWM				// PWM output mode sonar
+#define PINGPONG
+//#define MAXBOTIX_PWM				// PWM output mode sonar
 
 // Default PID variables
 //////////////////////////////////////////////////////////////////////////////

@@ -719,7 +719,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 #define MAG_DECLINATION  -3.62f   //(**)
 
 // Adds a forward predictive filterig to compensate gps lag. Code based on Jason Short's lead filter implementation
-#define GPS_LEAD_FILTER               //(**)
+//#define GPS_LEAD_FILTER               //(**)
 
 // add a 5 element moving average filter to GPS coordinates, helps eliminate gps noise but adds latency comment out to disable
 // use it with NMEA gps only
@@ -783,13 +783,13 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define LCD_ETPP        // I2C LCD: Eagle Tree Power Panel LCD, which is i2c (not serial)
 //#define LCD_LCD03       // I2C LCD: LCD03, which is i2c
 //#define LCD_LCD03S      // SERIAL LCD: LCD03 whit serial 9600 baud comunication enabled.
-//#define OLED_I2C_128x64 // I2C LCD: OLED http://www.multiwii.com/forum/viewtopic.php?f=7&t=1350
+#define OLED_I2C_128x64 // I2C LCD: OLED http://www.multiwii.com/forum/viewtopic.php?f=7&t=1350
 //#define OLED_DIGOLE     // I2C OLED from http://www.digole.com/index.php?productID=550
 
 /******************************   Display settings   ***********************************/
 //#define LCD_SERIAL_PORT 0    // must be 0 on Pro Mini and single serial boards; Set to your choice on any Mega based board
 
-//#define SUPPRESS_OLED_I2C_128x64LOGO  // suppress display of OLED logo to save memory
+#define SUPPRESS_OLED_I2C_128x64LOGO  // suppress display of OLED logo to save memory
 
 /* double font height for better readability. Reduces visible #lines by half.
  * The lower part of each page is accessible under the name of shifted keyboard letter :
@@ -806,12 +806,12 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define DISPLAY_COLUMNS 16
 /********************************    Navigation     ***********************************/
 /* keys to navigate the LCD menu */
-//#define LCD_MENU_PREV 'p'
-//#define LCD_MENU_NEXT 'n'
-//#define LCD_VALUE_UP 'u'
-//#define LCD_VALUE_DOWN 'd'
-//#define LCD_MENU_SAVE_EXIT 's'
-//#define LCD_MENU_ABORT 'x'
+#define LCD_MENU_PREV 'p'
+#define LCD_MENU_NEXT 'n'
+#define LCD_VALUE_UP 'u'
+#define LCD_VALUE_DOWN 'd'
+#define LCD_MENU_SAVE_EXIT 's'
+#define LCD_MENU_ABORT 'x'
 
 /**************************************************************************************/
 /***********************      LCD configuration menu         **************************/
@@ -819,7 +819,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 
 /* uncomment this line if you plan to use a LCD or OLED for tweaking parameters
  * http://www.multiwii.com/wiki/index.php?title=Extra_features#Configuration_Menu */
-//#define LCD_CONF
+#define LCD_CONF
 
 /* to include setting the aux switches for AUX1 -> AUX4 via LCD */
 //#define LCD_CONF_AUX
@@ -874,7 +874,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 /********************************************************************/
 #define BUZZER
 #define RCOPTIONSBEEP         // uncomment this if you want the buzzer to beep at any rcOptions change on channel Aux1 to Aux4
-#define ARMEDTIMEWARNING 600  // (*) Trigger an alarm after a certain time of being armed [s] to save you lipo (if your TX does not have a countdown)
+//#define ARMEDTIMEWARNING 600  // (*) Trigger an alarm after a certain time of being armed [s] to save you lipo (if your TX does not have a countdown)
 //#define PILOTLAMP             //Uncomment if you are using a X-Arcraft Pilot Lamp
 
 /********************************************************************/
@@ -887,7 +887,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
    must be associated with #define BUZZER ! */
 //#define VBAT              // uncomment this line to activate the vbat code
 //#define VBATSCALE       131 // (*) (**) change this value if readed Battery voltage is different than real voltage
-#define VBATNOMINAL     126 // 12,6V full battery nominal voltage - only used for lcd.telemetry
+//#define VBATNOMINAL     126 // 12,6V full battery nominal voltage - only used for lcd.telemetry
 //#define VBATLEVEL_WARN1 107 // (*) (**) 10,7V
 //#define VBATLEVEL_WARN2  99 // (*) (**) 9.9V
 //#define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
@@ -1073,13 +1073,13 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     /* Remove handling of other serial commands.
      * This includes navigating via serial the lcd.configuration menu, lcd.telemetry and permanent.log .
      * Navigating via stick inputs on tx is not affected and will work the same.  */
-     // #define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
+     #define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
 
     /**** suppress keeping the defaults for initial setup and reset in the code.
      * This requires a manual initial setup of the PIDs etc. or load and write from defaults.mwi;
      * reset in GUI will not work on PIDs
      */
-    //#define SUPPRESS_DEFAULTS_FROM_GUI
+    #define SUPPRESS_DEFAULTS_FROM_GUI
 
     #define DISABLE_SETTINGS_TAB  // Saves ~400bytes on ProMini
 
@@ -1132,8 +1132,8 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        Warning: this creates a special version of MultiWii Code
        You cannot fly with this special version. It is only to be used for calibrating ESCs
        Read How To at http://code.google.com/p/multiwii/wiki/ESCsCalibration */
-    #define ESC_CALIB_LOW  MINCOMMAND
-    #define ESC_CALIB_HIGH 2000
+    //#define ESC_CALIB_LOW  MINCOMMAND
+    //#define ESC_CALIB_HIGH 2000
     //#define ESC_CALIB_CANNOT_FLY  // uncomment to activate
 
     /****           internal frequencies                             ****/
@@ -1183,7 +1183,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     /**************************    WMP power pin     *******************************/
     //#define D12_POWER      // Use D12 on PROMINI to power sensors. Will disable servo[4] on D12
     /* disable use of the POWER PIN (allready done if the option RCAUXPIN12 is selected) */
-    #define DISABLE_POWER_PIN
+    //#define DISABLE_POWER_PIN
 
     /*************************************************************************************************/
     /****           END OF CONFIGURABLE PARAMETERS                                                ****/
