@@ -7,7 +7,7 @@
 #define GPS_LEAD_FILTER
 
 /* Serial speed of the GPS */
-#define GPS_SERIAL_SPEED 38400
+#define GPS_SERIAL_SPEED 115200
 
 /* GPS protocol 
  * NMEA			- Standard NMEA protocol GGA, GSA and RMC  sentences are needed

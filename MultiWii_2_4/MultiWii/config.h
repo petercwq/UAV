@@ -60,11 +60,11 @@
 //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
 //#define MINTHROTTLE 1064 // special ESC (simonk)
 //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-#define MINTHROTTLE 1150 // (*) (**)
+#define MINTHROTTLE 1100 // (*) (**)
 
 /****************************    Motor maxthrottle    *******************************/
 /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
-#define MAXTHROTTLE 1850
+#define MAXTHROTTLE 1900
 
 /****************************    Mincommand          *******************************/
 /* this is the value for the ESCs when they are not armed
@@ -518,7 +518,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    IMPORTANT! Change low pass filter setting changes PID behaviour, so retune your PID's after changing LPF.
    available for ITG3050, ITG3200, MPU3050, MPU6050*/
 //#define GYRO_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
-//#define GYRO_LPF_188HZ
+#define GYRO_LPF_188HZ
 //#define GYRO_LPF_98HZ
 //#define GYRO_LPF_42HZ
 //#define GYRO_LPF_20HZ
@@ -555,7 +555,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 /************************        Angele throttle correction         ********************/
 /* Automatically increase throttle based on the angle of the copter
    Original idea by Kraut Rob, first implementation HAdrian */
-#define THROTTLE_ANGLE_CORRECTION 40
+//#define THROTTLE_ANGLE_CORRECTION 40
 
 /*** HEADFREE : the copter can be controled by an absolute stick orientation, whatever the yaw orientation ***/
 //#define HEADFREE
@@ -699,7 +699,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 #define GPS_LED_INDICATOR
 
 //Enables the MSP_WP command set , which is used by WinGUI for displaying an setting up navigation
-#define USE_MSP_WP
+//#define USE_MSP_WP
 
 // HOME position is reset at every arm, uncomment it to prohibit it (you can set home position with GyroCalibration)
 //#define DONT_RESET_HOME_AT_ARM
@@ -765,7 +765,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 #define LAND_SPEED          100
 
 
-//#define ONLY_ALLOW_ARM_WITH_GPS_3DFIX      // Only allow FC arming if GPS has a 3D fix.
+#define ONLY_ALLOW_ARM_WITH_GPS_3DFIX      // Only allow FC arming if GPS has a 3D fix.
 
 /**************************************************************************************/
 /***********************        LCD/OLED - display settings       *********************/
