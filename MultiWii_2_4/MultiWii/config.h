@@ -780,7 +780,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 #define LAND_SPEED          100
 
 
-#define ONLY_ALLOW_ARM_WITH_GPS_3DFIX      // Only allow FC arming if GPS has a 3D fix.
+//#define ONLY_ALLOW_ARM_WITH_GPS_3DFIX      // Only allow FC arming if GPS has a 3D fix.
 
 /**************************************************************************************/
 /***********************        LCD/OLED - display settings       *********************/
@@ -811,7 +811,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
  * 1 - ! , 2 - @ , 3 - # , 4 - $ , 5 - % , 6 - ^ , 7 - & , 8 - * , 9 - (
  * You must add both to your lcd.telemetry.* sequences
  */
-#define DISPLAY_FONT_DSIZE //currently only aplicable for OLED_I2C_128x64 and OLED_DIGOLE
+//#define DISPLAY_FONT_DSIZE //currently only aplicable for OLED_I2C_128x64 and OLED_DIGOLE
 
 /* style of display - AUTODETECTED via LCD_ setting - only activate to override defaults */
 //#define DISPLAY_2LINES
