@@ -1,5 +1,5 @@
 {
-    "port": "/dev/cu.usbserial-A70234SO",
+    "port": "/dev/cu.CRIUS_BT-DevB",
     "board": "arduino:avr:pro",
     "configuration": "cpu=16MHzatmega328",
     "sketch": "ssd1306_128x64_i2c/ssd1306_128x64_i2c.ino"

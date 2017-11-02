@@ -533,7 +533,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    IMPORTANT! Change low pass filter setting changes PID behaviour, so retune your PID's after changing LPF.
    available for ITG3050, ITG3200, MPU3050, MPU6050*/
 //#define GYRO_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
-#define GYRO_LPF_188HZ
+//#define GYRO_LPF_188HZ
 //#define GYRO_LPF_98HZ
 //#define GYRO_LPF_42HZ
 //#define GYRO_LPF_20HZ
@@ -702,16 +702,16 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    You have to use at least I2CGpsNav code r33 */
 /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
 
-#define I2C_GPS
+//#define I2C_GPS
 
 // If your I2C GPS board has Sonar support enabled
-#define I2C_GPS_SONAR
+//#define I2C_GPS_SONAR
 
 /* indicate a valid GPS fix with at least 5 satellites by flashing the LED  - Modified by MIS - Using stable LED (YELLOW on CRIUS AIO) led work as sat number indicator
   - No GPS FIX -> LED blink at speed of incoming GPS frames
   - Fix and sat no. bellow 5 -> LED off
   - Fix and sat no. >= 5 -> LED blinks, one blink for 5 sat, two blinks for 6 sat, three for 7 ... */
-#define GPS_LED_INDICATOR
+//#define GPS_LED_INDICATOR
 
 //Enables the MSP_WP command set , which is used by WinGUI for displaying an setting up navigation
 //#define USE_MSP_WP
@@ -798,7 +798,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define LCD_ETPP        // I2C LCD: Eagle Tree Power Panel LCD, which is i2c (not serial)
 //#define LCD_LCD03       // I2C LCD: LCD03, which is i2c
 //#define LCD_LCD03S      // SERIAL LCD: LCD03 whit serial 9600 baud comunication enabled.
-#define OLED_I2C_128x64 // I2C LCD: OLED http://www.multiwii.com/forum/viewtopic.php?f=7&t=1350
+//#define OLED_I2C_128x64 // I2C LCD: OLED http://www.multiwii.com/forum/viewtopic.php?f=7&t=1350
 //#define OLED_DIGOLE     // I2C OLED from http://www.digole.com/index.php?productID=550
 
 /******************************   Display settings   ***********************************/
@@ -834,7 +834,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 
 /* uncomment this line if you plan to use a LCD or OLED for tweaking parameters
  * http://www.multiwii.com/wiki/index.php?title=Extra_features#Configuration_Menu */
-#define LCD_CONF
+//#define LCD_CONF
 
 /* to include setting the aux switches for AUX1 -> AUX4 via LCD */
 #define LCD_CONF_AUX
@@ -1083,20 +1083,20 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
      * This will disable use of the GUI, winGUI, android apps and any other program that makes use of the MSP.
      * You must find another way (like LCD_CONF) to tune the parameters or live with the defaults.
      * If you run a LCD/OLED via i2c or serial/Bluetooth, this is safe to use */
-     #define SUPPRESS_ALL_SERIAL_MSP // saves approx 2700 bytes
+    // #define SUPPRESS_ALL_SERIAL_MSP // saves approx 2700 bytes
 
     /* Remove handling of other serial commands.
      * This includes navigating via serial the lcd.configuration menu, lcd.telemetry and permanent.log .
      * Navigating via stick inputs on tx is not affected and will work the same.  */
-     #define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
+    //#define SUPPRESS_OTHER_SERIAL_COMMANDS // saves  approx 0 to 100 bytes, depending on features enabled
 
     /**** suppress keeping the defaults for initial setup and reset in the code.
      * This requires a manual initial setup of the PIDs etc. or load and write from defaults.mwi;
      * reset in GUI will not work on PIDs
      */
-    #define SUPPRESS_DEFAULTS_FROM_GUI
+    //#define SUPPRESS_DEFAULTS_FROM_GUI
 
-    #define DISABLE_SETTINGS_TAB  // Saves ~400bytes on ProMini
+    //#define DISABLE_SETTINGS_TAB  // Saves ~400bytes on ProMini
 
     /********************************************************************/
     /****           diagnostics                                      ****/
