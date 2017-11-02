@@ -2,5 +2,5 @@
     "port": "/dev/cu.usbserial-A70234SO",
     "board": "arduino:avr:pro",
     "configuration": "cpu=16MHzatmega328",
-    "sketch": "MultiWii.ino"
+    "sketch": "ssd1306_128x64_i2c/ssd1306_128x64_i2c.ino"
 }

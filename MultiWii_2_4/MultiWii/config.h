@@ -1,6 +1,21 @@
 #ifndef CONFIG_H_
 #define CONFIG_H_
 
+/********************************
+* Scanning...
+* I2C device found at address 0x1E  !
+* I2C device found at address 0x20  !
+* I2C device found at address 0x3C  !
+* I2C device found at address 0x68  !
+* I2C device found at address 0x77  !
+* done
+ * 
+ * 
+ * 
+ * 
+ * *******************************/
+
+
 /*************************************************************************************************/
 /****           CONFIGURABLE PARAMETERS                                                       ****/
 /*************************************************************************************************/
@@ -796,7 +811,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
  * 1 - ! , 2 - @ , 3 - # , 4 - $ , 5 - % , 6 - ^ , 7 - & , 8 - * , 9 - (
  * You must add both to your lcd.telemetry.* sequences
  */
-//#define DISPLAY_FONT_DSIZE //currently only aplicable for OLED_I2C_128x64 and OLED_DIGOLE
+#define DISPLAY_FONT_DSIZE //currently only aplicable for OLED_I2C_128x64 and OLED_DIGOLE
 
 /* style of display - AUTODETECTED via LCD_ setting - only activate to override defaults */
 //#define DISPLAY_2LINES
@@ -806,13 +821,12 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define DISPLAY_COLUMNS 16
 /********************************    Navigation     ***********************************/
 /* keys to navigate the LCD menu */
-// #define LCD_USE_KEY // use key to operate
-// #define LCD_MENU_PREV 'p'
-// #define LCD_MENU_NEXT 'n'
-// #define LCD_VALUE_UP 'u'
-// #define LCD_VALUE_DOWN 'd'
-// #define LCD_MENU_SAVE_EXIT 's'
-// #define LCD_MENU_ABORT 'x'
+#define LCD_MENU_PREV 'p'
+#define LCD_MENU_NEXT 'n'
+#define LCD_VALUE_UP 'u'
+#define LCD_VALUE_DOWN 'd'
+#define LCD_MENU_SAVE_EXIT 's'
+#define LCD_MENU_ABORT 'x'
 
 /**************************************************************************************/
 /***********************      LCD configuration menu         **************************/
@@ -823,11 +837,11 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 #define LCD_CONF
 
 /* to include setting the aux switches for AUX1 -> AUX4 via LCD */
-//#define LCD_CONF_AUX
+#define LCD_CONF_AUX
 
 /* optional exclude some functionality - uncomment to suppress unwanted aux channel configuration options */
 //#define SUPPRESS_LCD_CONF_AUX2
-//#define SUPPRESS_LCD_CONF_AUX34
+#define SUPPRESS_LCD_CONF_AUX34
 
 /**************************************************************************************/
 /***********************      LCD       telemetry            **************************/
@@ -968,7 +982,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
      * It must be 16 characters total,
      * The last 4 characters will be overwritten with the version number.
      */
-    #define BOARD_NAME "MultiWii   V-.--"
+    #define BOARD_NAME "WQ Chen,   V-.--"
     //                  123456789.123456
 
     /*************      Support multiple configuration profiles in EEPROM     ************/
@@ -1133,9 +1147,9 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        Warning: this creates a special version of MultiWii Code
        You cannot fly with this special version. It is only to be used for calibrating ESCs
        Read How To at http://code.google.com/p/multiwii/wiki/ESCsCalibration */
-    //#define ESC_CALIB_LOW  MINCOMMAND
-    //#define ESC_CALIB_HIGH 2000
-    //#define ESC_CALIB_CANNOT_FLY  // uncomment to activate
+    // #define ESC_CALIB_LOW  MINCOMMAND
+    // #define ESC_CALIB_HIGH 2000
+    // #define ESC_CALIB_CANNOT_FLY  // uncomment to activate
 
     /****           internal frequencies                             ****/
     /* frequenies for rare cyclic actions in the main loop, depend on cycle time

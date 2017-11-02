@@ -1,0 +1,6 @@
+{
+    "port": "/dev/cu.usbserial-A70234SO",
+    "board": "arduino:avr:nano",
+    "configuration": "cpu=atmega328",
+    "sketch": "I2C_GPS_NAV_v2_2.ino"
+}

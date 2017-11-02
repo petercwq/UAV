@@ -1002,7 +1002,7 @@ void initLCD()
 #ifndef OLED_I2C_128x64LOGO_PERMANENT
   LCDclear();
   strcpy_P(line1, PSTR(BOARD_NAME)); // user defined macro
-                                     //                     0123456789.123456
+                                    //                     0123456789.123456
   line1[12] = digit100(VERSION);
   line1[14] = digit10(VERSION);
   line1[15] = digit1(VERSION);
@@ -1784,9 +1784,7 @@ void configurationLoop()
   uint8_t i, p;
   uint8_t LCD = 1;
   uint8_t refreshLCD = 1;
-#ifdef LCD_USE_KEY
   uint8_t key = 0;
-#endif
   uint8_t allow_exit = 0;
 #ifdef MULTIPLE_CONFIGURATION_PROFILES
   uint8_t currentSet = global_conf.currentSet; // keep a copy for abort.case
@@ -1810,17 +1808,15 @@ void configurationLoop()
       readSerial_RX();
     delay(44); // For digital receivers , to ensure that an "old" frame does not cause immediate exit at startup.
 #endif
-#ifdef LCD_USE_KEY
-  #if defined(LCD_TEXTSTAR) || defined(LCD_VT100) || defined(LCD_TTY) // textstar, vt100 and tty can send keys
-      key = (SerialAvailable(LCD_SERIAL_PORT) ? SerialRead(LCD_SERIAL_PORT) : 0);
-  #endif
-  #ifdef LCD_CONF_DEBUG
-      delay(1000);
-      if (key == LCD_MENU_NEXT)
-        key = LCD_VALUE_UP;
-      else
-        key = LCD_MENU_NEXT;
-  #endif
+#if defined(LCD_TEXTSTAR) || defined(LCD_VT100) || defined(LCD_TTY) // textstar, vt100 and tty can send keys
+    key = (SerialAvailable(LCD_SERIAL_PORT) ? SerialRead(LCD_SERIAL_PORT) : 0);
+#endif
+#ifdef LCD_CONF_DEBUG
+    delay(1000);
+    if (key == LCD_MENU_NEXT)
+      key = LCD_VALUE_UP;
+    else
+      key = LCD_MENU_NEXT;
 #endif
     for (i = ROLL; i <= THROTTLE; i++)
     {
@@ -1829,45 +1825,25 @@ void configurationLoop()
     };
     if (IsMid(YAW) && IsMid(PITCH) && IsMid(ROLL))
       allow_exit = 1;
-    if (
-      #ifdef LCD_USE_KEY
-      key == LCD_MENU_SAVE_EXIT || 
-      #endif
-      (IsLow(YAW) && IsHigh(PITCH) && allow_exit))
+    if (key == LCD_MENU_SAVE_EXIT || (IsLow(YAW) && IsHigh(PITCH) && allow_exit))
       LCD = 0; // save and exit
-    else if (
-      #ifdef LCD_USE_KEY
-      key == LCD_MENU_ABORT || 
-      #endif
-      (IsHigh(YAW) && IsHigh(PITCH) && allow_exit))
+    else if (key == LCD_MENU_ABORT || (IsHigh(YAW) && IsHigh(PITCH) && allow_exit))
       LCD = 2; // exit without save: eeprom has only 100.000 write cycles
-    else if (
-      #ifdef LCD_USE_KEY      
-      key == LCD_MENU_NEXT ||
-      #endif
-       (IsLow(PITCH) && IsMid(YAW)))
+    else if (key == LCD_MENU_NEXT || (IsLow(PITCH) && IsMid(YAW)))
     { //switch config param with pitch
       refreshLCD = 1;
       p++;
       if (p > PARAMMAX)
         p = 0;
     }
-    else if (
-      #ifdef LCD_USE_KEY      
-      key == LCD_MENU_PREV || 
-      #endif
-      (IsHigh(PITCH) && IsMid(YAW)))
+    else if (key == LCD_MENU_PREV || (IsHigh(PITCH) && IsMid(YAW)))
     {
       refreshLCD = 1;
       p--;
       if (p == 0xFF)
         p = PARAMMAX;
     }
-    else if (
-      #ifdef LCD_USE_KEY
-      key == LCD_VALUE_DOWN ||
-      #endif
-       (IsLow(ROLL)))
+    else if (key == LCD_VALUE_DOWN || (IsLow(ROLL)))
     { //+ or - param with low and high roll
       refreshLCD = 1;
       lcd_param_def_t *deft = (lcd_param_def_t *)pgm_read_word(&(lcd_param_ptr_table[(p * 3) + 2]));
@@ -1875,11 +1851,7 @@ void configurationLoop()
       if (p == 0)
         conf.pid[PITCH].P8 = conf.pid[ROLL].P8;
     }
-    else if (
-      #ifdef LCD_USE_KEY
-      key == LCD_VALUE_UP ||
-      #endif
-       (IsHigh(ROLL)))
+    else if (key == LCD_VALUE_UP || (IsHigh(ROLL)))
     {
       refreshLCD = 1;
       lcd_param_def_t *deft = (lcd_param_def_t *)pgm_read_word(&(lcd_param_ptr_table[(p * 3) + 2]));
