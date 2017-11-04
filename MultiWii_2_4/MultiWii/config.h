@@ -534,9 +534,9 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    available for ITG3050, ITG3200, MPU3050, MPU6050*/
 //#define GYRO_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
 //#define GYRO_LPF_188HZ
-#define GYRO_LPF_98HZ
+//#define GYRO_LPF_98HZ
 //#define GYRO_LPF_42HZ
-//#define GYRO_LPF_20HZ
+#define GYRO_LPF_20HZ
 //#define GYRO_LPF_10HZ
 //#define GYRO_LPF_5HZ       // Use this only in extreme cases, rather change motors and/or props -- setting not available on ITG3200
 
@@ -570,7 +570,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 /************************        Angele throttle correction         ********************/
 /* Automatically increase throttle based on the angle of the copter
    Original idea by Kraut Rob, first implementation HAdrian */
-//#define THROTTLE_ANGLE_CORRECTION 40
+#define THROTTLE_ANGLE_CORRECTION 40
 
 /*** HEADFREE : the copter can be controled by an absolute stick orientation, whatever the yaw orientation ***/
 #define HEADFREE
