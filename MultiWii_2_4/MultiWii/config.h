@@ -75,7 +75,7 @@
 //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
 //#define MINTHROTTLE 1064 // special ESC (simonk)
 //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-#define MINTHROTTLE 1100 // (*) (**)
+#define MINTHROTTLE 1150 // (*) (**)
 
 /****************************    Motor maxthrottle    *******************************/
 /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
@@ -87,8 +87,8 @@
 #define MINCOMMAND  1000
 
 /**********************************  I2C speed for old WMP config (useless config for other sensors)  *************/
-//#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
-#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
+#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
+//#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
 
 /***************************    Internal i2c Pullups   ********************************/
 /* enable internal I2C pull ups (in most cases it is better to use external pullups) */
@@ -536,7 +536,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 //#define GYRO_LPF_188HZ
 //#define GYRO_LPF_98HZ
 //#define GYRO_LPF_42HZ
-//#define GYRO_LPF_20HZ
+#define GYRO_LPF_20HZ
 //#define GYRO_LPF_10HZ
 //#define GYRO_LPF_5HZ       // Use this only in extreme cases, rather change motors and/or props -- setting not available on ITG3200
 
@@ -573,7 +573,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 //#define THROTTLE_ANGLE_CORRECTION 40
 
 /*** HEADFREE : the copter can be controled by an absolute stick orientation, whatever the yaw orientation ***/
-//#define HEADFREE
+#define HEADFREE
 
 /*************************        Advanced Headfree Mode             ********************/
 /* In Advanced Headfree mode when the copter is farther than ADV_HEADFREE_RANGE meters then
@@ -608,7 +608,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    PITCH, ROLL and YAW is centered and THROTTLE is set to FAILSAFE_THROTTLE value. You must set this value to descending about 1m/s or so
    for best results. This value is depended from your configuration, AUW and some other params.  Next, after FAILSAFE_OFF_DELAY the copter is disarmed,
    and motors is stopped. If RC pulse coming back before reached FAILSAFE_OFF_DELAY time, after the small quard time the RC control is returned to normal. */
-//#define FAILSAFE                                // uncomment  to activate the failsafe function
+#define FAILSAFE                                // uncomment  to activate the failsafe function
 #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
 #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
 #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
@@ -804,7 +804,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 /******************************   Display settings   ***********************************/
 //#define LCD_SERIAL_PORT 0    // must be 0 on Pro Mini and single serial boards; Set to your choice on any Mega based board
 
-#define SUPPRESS_OLED_I2C_128x64LOGO  // suppress display of OLED logo to save memory
+//#define SUPPRESS_OLED_I2C_128x64LOGO  // suppress display of OLED logo to save memory
 
 /* double font height for better readability. Reduces visible #lines by half.
  * The lower part of each page is accessible under the name of shifted keyboard letter :
@@ -837,11 +837,11 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 //#define LCD_CONF
 
 /* to include setting the aux switches for AUX1 -> AUX4 via LCD */
-#define LCD_CONF_AUX
+//#define LCD_CONF_AUX
 
 /* optional exclude some functionality - uncomment to suppress unwanted aux channel configuration options */
 //#define SUPPRESS_LCD_CONF_AUX2
-#define SUPPRESS_LCD_CONF_AUX34
+//#define SUPPRESS_LCD_CONF_AUX34
 
 /**************************************************************************************/
 /***********************      LCD       telemetry            **************************/
