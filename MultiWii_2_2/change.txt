@@ -1,0 +1,262 @@
+main changes since the last release 2.1
+
+
+***documentation***
+
+===============================================================
+Documentation for releases should be in the official wiki at 
+http://www.multiwii.com/wiki
+
+stable and development versions can be found here:
+http://code.google.com/p/multiwii/downloads/list
+For development versions you are on your own - good luck.
+Don't try any development version if you don't follow dev evolution.
+Don't forget a multirotor is something that can be dangerous.
+
+For discussion and questions the official forum is at
+http://www.multiwii.com/forum
+
+Evolution of the code can be followed here:
+http://code.google.com/p/multiwii/source/list
+
+MultiWii is not a product, nor a plug and play solution.
+It is basically an open source project.
+Don't expect to buy a compatible board and run it without a minimum knowledge.
+
+
+
+***Control mode***
+
+- introduction of HORIZON MODE.
+We have now 3 modes:
+
+ACRO mode.
+This is the default one when none of the ANGLE & HORIZON BOX is activated.
+The copter will continue rotating in the direction in which you tilt sticks. When you let go of sticks it will maintain that angle and not return to level
+
+ANGLE mode
+The position of the stick indicates the angle at which the copter tries to maintain. Sticks off = level. Full sticks in any direction and it will tilt at around 50 degrees. It's proportional in-between.
+It maintains the angle set by the stick. Let go of sticks and it returns to level
+
+HORIZON mode <- new
+It's a proportional mix of the two. Sticks off = level. Full deflection = ACRO. In between it gradually mixes from LEVEL mode to ACRO.
+It's a fine mix to be able to do some ACRO with the safety of ANGLE mode when you release the sticks.
+It allows also a more natural way of flying as the multi seems less constrained.
+
+
+- failsafe code is more strict. (thanks to MIS)
+If activated, it takes into account all the main channels and it's important to stay strictly inside the [1000-2000] range.
+For instance a throttle of 995 will activate the failsafe
+failsafe is optional and can be activated via #define FAILSAFE
+
+- Acrotrainer mode introduced by PatrikE
+a kind of non proportional horizon mode
+more info here: http://www.multiwii.com/forum/viewtopic.php?f=16&t=1944
+
+- SERVO_TILT_MIX
+introduced by Bledi and Gary
+http://youtu.be/zKGr6iR54vM 
+corrected after to support optionally up to 2 AUX channels superposition to control the gimbal
+
+- CAM STAB: (thanks to Gary and suggested or Arne)
+ Ability to define Cam Stab control channels used
+ Ability to turn off
+ Fix for AUX3 + 4 affecting tilt/roll with camstab enabled
+
+
+
+***add-ons***
+
+- pilotlamp integration (thanks to mr.rc-cam, jevermeister, doughboy )
+via #define PILOTLAMP
+http://code.google.com/p/multiwii/wiki/Documentation_Pilotlamp
+
+- LEDRING pattern was refined thanks to shikra
+instructions here: http://code.google.com/p/multiwii/source/browse/trunk/LEDRing/README.txt
+
+- variometer introduced by Hamburger
+enable to get audio feedback upon rising/falling copter/plane
+via #define VARIOMETER
+
+
+
+***receiver & UART***
+
+- option to use throttle PIN as the PPM PIN on mega boards thanks to MIS
+this way you can use the UART 1 for other purpose
+via #define PPM_ON_THROTTLE
+
+- every UART port on MEGA boards can be used at the same time with different baud configuration.
+ie, you can connect up to 4 GUI or OSD or anything using MSP simultaneously
+
+- the second UART port on promicro boards can be used at the same time with different baud configuration.
+
+- spektrum (thanks to Danal)
+  - spektrum satellite up to 12 channels, even if only 8 are usable in multiwii
+  - spektrum satellite BIND button, to associate a satellite without the main receiver
+
+
+
+***PIN mapping***
+
+- possibility to override some PIN definition in config.h (thanks to Hamburger)
+
+
+
+***GPS***
+
+- UBLOX GPS: the baud configuration is autodetected and the UBLOX binary protocol is automaticly set (thanks to MIS & EOSBandi)
+
+- MKT GPS can now be parsed in binary mode is possible thanks to EOSBandi
+made for DIYDrones MTK firmware v1.6 and v1.9
+
+- I2C GPS:
+correct directionToHome (change it to the opposite direction)
+there is still a problem remaining when your distance to home reaches 654m: it overflows.
+a I2C code evolution is needed to correct this problem
+
+- a forward predictive filter was ported from the Arducopter code by EOSBandi
+optional and by default activated: #define GPS_LEAD_FILTER
+
+- first implementation of MSP_SET_WP
+with the help of Ezio app (EZ-GUI), we can now control the multi with a smartphone: set a new position on a map / follow me / follow heading
+see Multiwii EZ-GUI specific topic: http://www.multiwii.com/forum/viewtopic.php?f=8&t=2034
+some video about this functionality:
+http://www.youtube.com/watch?v=qpoPanmVa9Y
+http://www.youtube.com/watch?v=hPj6WZex8j0
+http://www.youtube.com/watch?v=nPICiiaDTnc
+
+- AP_MODE introduced by PatrikE
+used in GPS POS HOLD mode, outside the specified stick range the POS HOLD position is renew
+
+
+
+***multiwii models***
+
+- HELICOPTER and PLANE models was refined thanks to PatrickE and Hamburger
+multiple helicopter type HELI_120_CCPM , HELI_90_DEG
+servo configuration for plane, FLAP, FLAPPERON
+
+- HEXH6 multicopter type added (thanks to shikra)
+
+- Bi-Copter pitch direction setting
+
+- USE_THROTTLESERVO (for airplanes), COLLECTIVE_RANGE changed (second value not offset anymore)
+
+
+
+***GUI & OSD & LCD***
+
+- a RECONNECT button was added by PatrickE
+a file is now generated to indicate the last COM&Serial speed. The serial speed can be edited in this file to change the UART speed of GUI.
+
+- New MultiWiiConf GUI v2.2 with graphical improvements (thanks to Magnetron and doughboy)
+cool things like virtual horizon
+
+- optional 3 independent configurations, stick selectable settings in EEPROM (thanks to MIS)
+can be activated via #define MULTIPLE_CONFIGURATION_PROFILES
+
+- a RESET button was added in the GUI
+if you encounter any EEPROM problem or if you want to restore the default values
+
+
+
+***LCD***
+
+- on mega boards, it's possible to define the LCD port for LCD supporting true UART.
+
+- more parameters are tunable via LCD conf, all the one in config.h with a small (*) besides,  thanks to Hamburger
+those parameters will be moved in the GUI later in another step, once we find the good way to do it.
+example: failsave.throttle , vbat tunable params , powermeter tunable params
+
+- many telemetry and LCD config enhancements (thanks to hamburger)
+telemetry page 3: use long boxnames
+telemetry page 2: show numerical values for sensor data next to bar graphs 
+no user interaction necessary to run telemetry info upon start up 
+set individual board name string (currently used for display; no GUI representation yet)
+
+- LCDconfig menu: with THROTTLE=High, increment is 10 times of normal
+
+- servos are moved to neutral position during calibration and lcd.configuration
+
+
+
+***OSD***
+
+- RSSI PIN added for OSD use (thanks to Kataventos)
+the RSSI output can be retrieved via a MSP message for OSD
+
+- OSD BOX added for OSD activation (thanks to Itai)
+
+- huge work made on an open source code OSD fully compatible with MultiWii (thanks to the team lead by Kataventos)
+http://www.multiwii.com/forum/viewtopic.php?f=8&t=2918
+http://code.google.com/p/rush-osd-development/
+
+
+
+***IMU and baro***
+
+- gyro calibration could be held until the MWC stops moving
+introduced by MIS, and made optional after via a specific define: #define GYROCALIBRATIONFAILSAFE
+
+- mag gain calibration is improved thanks to EOSBandi
+based on Fabio FreeIMU code. We won't forget you Fabio...
+
+- perfect euler angle computation in case of 9DOF (better heading)
+no more gimbal lock in GUI representation with a 9DOF sensor
+
+- force sensors orientation to override board specific defaults
+optional in config.h
+
+- default ACC LPF factor reduced from 16 (2^4), and is share with ACC LPF for alt hold
+
+- gyro/acc complementary filter value increased from 400 to 600
+
+- gyro/mag complementary filter now set to 250 instead of 200
+
+- gyro scale factor changed from 2380 to 2279
+
+- accelerometer now used below 1.15G and above 0.85G instead of previous 1.4G/0.6G settings
+
+- option: SENSORS_TILT_45DEG_LEFT/RIGHT to change X/P configuration without changing board orientation
+
+- ALT HOLD is greatly improved thanks to the code of Mahowik, a little bit optimized since
+improved baro hold (PID) algorithm that includes the accelerometer z-axis
+its a real major improvement for multiwii
+http://www.youtube.com/watch?v=T3htaJ53Z7E
+
+- baro calibration and calculation is improved thanks to Sebbi
+baro indicates now altitude 0 when it is powered. This is the reference altitude.
+
+- calculation of barometric altitude changed to include temperature, faster update rate
+
+- new FC boards: SIRIUSGPS, SIRIUS_AIR, SIRIUS_AIR_GPS, MICROWII, GY_521, MultiWiiMega, DESQUARED6DOFV2GO, DESQUARED6DOFV4, LADYBIRD, MEGAWAP_V2_STD, MEGAWAP_V2_ADV, HK_MultiWii_SE_V2, HK_MultiWii_328P, RCNet_FC, FLYDU_ULTRA
+
+
+
+***internal improvements***
+
+- some default PID were changed for optimization speed in PID copmputation.
+The default PID should behave exactly as the previous ones.
+To restore your old PID settings, just a proportion is needed.
+
+- 5 hardware PWM servos avaliable with Mega boards on pins 44,45,46,11,12 (thanks to MIS)
+
+- EEPROM settings secured by checksum (thanks to MIS)
+
+- optional permanent logging to eeprom
+setting: LOG_PERMANENT
+
+- change LED blink frequency for acc-uncalibrated or tilt>25 from 50ms to 10ms
+
+- rework of task scheduler code thanks to ideas from Sebbi
+we have now a better computation time repartition
+
+- optional fixate cycle time (by burning cpu time away)
+
+- allow override of motor/servo mixing from config.h - no need to edit Output.ino
+experimental
+
+- faster cycle time than with v2.1
+
+- many many hidden optimizations in the code
