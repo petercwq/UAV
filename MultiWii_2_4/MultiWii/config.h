@@ -87,8 +87,8 @@
 #define MINCOMMAND  1000
 
 /**********************************  I2C speed for old WMP config (useless config for other sensors)  *************/
-#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
-//#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
+//#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
+#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
 
 /***************************    Internal i2c Pullups   ********************************/
 /* enable internal I2C pull ups (in most cases it is better to use external pullups) */
@@ -534,9 +534,9 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    available for ITG3050, ITG3200, MPU3050, MPU6050*/
 //#define GYRO_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
 //#define GYRO_LPF_188HZ
-//#define GYRO_LPF_98HZ
+#define GYRO_LPF_98HZ
 //#define GYRO_LPF_42HZ
-#define GYRO_LPF_20HZ
+//#define GYRO_LPF_20HZ
 //#define GYRO_LPF_10HZ
 //#define GYRO_LPF_5HZ       // Use this only in extreme cases, rather change motors and/or props -- setting not available on ITG3200
 
