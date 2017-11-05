@@ -359,7 +359,7 @@
   /* Automatically increase throttle based on the angle of the copter
      Original idea by Kraut Rob, first implementation HAdrian							*/
 
-  #define THROTTLE_ANGLE_CORRECTION 40
+  // #define THROTTLE_ANGLE_CORRECTION 40
   
  /*************************        Advanced Headfree Mode             ********************/
  /* In Advanced Headfree mode when the copter is farther than ADV_HEADFREE_RANGE meters then 
@@ -709,14 +709,14 @@
      * It must be 16 characters total,
      * The last 4 characters will be overwritten with the version number.
      */
-    #define BOARD_NAME "MultiWii   V-.--"
+    #define BOARD_NAME "WQ Chen,   V-.--"
     //                  123456789.123456
 
   /*************      Support multiple configuration profiles in EEPROM     ************/
-    //#define MULTIPLE_CONFIGURATION_PROFILES
+  #define MULTIPLE_CONFIGURATION_PROFILES
 
   /*************      do no reset constants when change of flashed program is detected ***********/
-    #define NO_FLASH_CHECK
+  #define NO_FLASH_CHECK
 
 /*************************************************************************************************/
 /*****************                                                                 ***************/
