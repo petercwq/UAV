@@ -69,7 +69,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////
 // GPS data filtering - moving average filter vector length
-//
+// Need to enable this in multiwii:    #define GPS_FILTERING
+// 
 #define GPS_FILTER_VECTOR_LENGTH 5
 
 

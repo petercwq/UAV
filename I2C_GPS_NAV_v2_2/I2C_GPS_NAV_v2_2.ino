@@ -1437,7 +1437,7 @@ void Sonar_init()
   // Pin change mask registers decide which pins are enabled as triggers
   PCMSK1 |= (1 << PCINT10); // pin 2 PC2
 
-  DDRC |= 0x08; //triggerpin PC3 as output
+  DDRC |= 0x08; //trigger pin PC3 as output
 #if !defined(MAXBOTIX_PWM)
   Sonar_update();
 #endif

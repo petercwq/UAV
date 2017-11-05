@@ -349,7 +349,7 @@ void GPS_NewData(void) {
       i2c_write(I2C_GPS_SONAR_ALT);         
       i2c_rep_start((I2C_GPS_ADDRESS<<1)|1);
 
-      varptr = (uint8_t *)&sonarAlt;          // altitude (in cm? maybe)
+      varptr = (uint8_t *)&sonarAlt;          // altitude (in cm)
       *varptr++ = i2c_readAck();
       *varptr   = i2c_readNak();
     #endif	

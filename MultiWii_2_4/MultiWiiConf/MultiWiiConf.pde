@@ -394,7 +394,8 @@ void setup() {
   // Trying to make both worlds happy..
   if( P3D == OPENGL ) pVersion = 2.0; else pVersion = 1.5;
 
-  size(1000,620,OPENGL);
+  //size(windowsX,windowsY,OPENGL);
+  size(1000, 570, P3D);
   frameRate(20);
 
   font8 = createFont("Arial bold",8,false);
@@ -3108,10 +3109,10 @@ public void addTabs(){
     tHeight = 17;
   }
   
-  controlP5.addTab("default").setHeight(tHeight);
-  controlP5.addTab("ServoSettings").setHeight(tHeight);
-  controlP5.addTab("Config").setHeight(tHeight);
-  controlP5.addTab("Motors").setHeight(tHeight);
+  controlP5.getTab("default").setHeight(tHeight);
+  controlP5.getTab("ServoSettings").setHeight(tHeight);
+  controlP5.getTab("Config").setHeight(tHeight);
+  controlP5.getTab("Motors").setHeight(tHeight);
  }
  
 // WebLinks
