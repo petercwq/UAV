@@ -298,7 +298,8 @@ uint8_t getEstimatedAltitude(){
   // baroGroundPressureSum is not supposed to be 0 here
   // see: https://code.google.com/p/ardupilot-mega/source/browse/libraries/AP_Baro/AP_Baro.cpp
   BaroAlt = ( logBaroGroundPressureSum - log(baroPressureSum) ) * baroGroundTemperatureScale;
-  
+  debug[0] = BaroAlt;
+  debug[1] = sonarAlt;
   // Nov 8, 2017 WQ Chen - if sonar reads less than 4m (sensor limit 4.5m - safety margin 0.5m), use sonar
   if ((sonarAlt > 0 && sonarAlt < 400) && 
   ((att.angle[ROLL] > -80 && att.angle[ROLL] < 80) && (att.angle[PITCH] > -80 && att.angle[PITCH] < 80)))
@@ -307,6 +308,7 @@ uint8_t getEstimatedAltitude(){
     BaroAlt = abs((int32_t)sonarAlt * (_cos10(att.angle[ROLL]) * _cos10(att.angle[PITCH]) >> 8)) >> 12;
   }
   alt.EstAlt = (alt.EstAlt * 6 + BaroAlt * 2) >> 3; // additional LPF to reduce baro noise (faster by 30 µs)
+  debug[2] = alt.EstAlt;
 
   #if (defined(VARIOMETER) && (VARIOMETER != 2)) || !defined(SUPPRESS_BARO_ALTHOLD)
     //P
