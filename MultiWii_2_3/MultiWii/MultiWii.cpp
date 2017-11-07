@@ -1126,12 +1126,21 @@ void loop () {
         break;
     }
   }
- 
-  computeIMU();
-  // Measure loop rate just afer reading the sensors
-  currentTime = micros();
-  cycleTime = currentTime - previousTime;
+
+   // Measure loop rate just afer reading the sensors
+   // Nov 8, 2017 WQ CHEN, from v2.4
+   while(1) {
+    currentTime = micros();
+    cycleTime = currentTime - previousTime;
+    #if defined(LOOP_TIME)
+      if (cycleTime >= LOOP_TIME) break;
+    #else
+      break;  
+    #endif
+  }
   previousTime = currentTime;
+
+  computeIMU();
 
   //***********************************
   //**** Experimental FlightModes *****

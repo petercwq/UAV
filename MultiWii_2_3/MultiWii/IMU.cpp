@@ -261,6 +261,22 @@ void getEstimatedAttitude(){
   }
 
 #if BARO
+// 2015.11.30 by XD, x is in 0.1 deg, returns cos * (1 << 10)
+// when x approaches zero, cos(x) = 1 - x ^ 2 / 2, x is in radians
+// https://en.wikipedia.org/wiki/Small-angle_approximation
+// rad = deg / 180 * PI
+int32_t _cos10(int16_t x)
+{
+  // x within [-1800, 1800]
+  int32_t radTemp = (int32_t)x * 114; // rad = x * ((PI / 1800) << 16), rad within [-205200, 205200]
+  int32_t rad = radTemp >> 6; // rad ^ 2 within [-657922500, 657922500]
+  
+  int32_t cos20 = ((uint32_t)1 << 20) - ((rad * rad) >> 1);
+  int32_t result = cos20 >> 10;
+  
+  return result;
+}
+
 uint8_t getEstimatedAltitude(){
   int32_t  BaroAlt;
   static float baroGroundTemperatureScale,logBaroGroundPressureSum;
@@ -282,7 +298,14 @@ uint8_t getEstimatedAltitude(){
   // baroGroundPressureSum is not supposed to be 0 here
   // see: https://code.google.com/p/ardupilot-mega/source/browse/libraries/AP_Baro/AP_Baro.cpp
   BaroAlt = ( logBaroGroundPressureSum - log(baroPressureSum) ) * baroGroundTemperatureScale;
-
+  
+  // Nov 8, 2017 WQ Chen - if sonar reads less than 4m (sensor limit 4.5m - safety margin 0.5m), use sonar
+  if ((sonarAlt > 0 && sonarAlt < 400) && 
+  ((att.angle[ROLL] > -80 && att.angle[ROLL] < 80) && (att.angle[PITCH] > -80 && att.angle[PITCH] < 80)))
+  {
+    // actual alt = sonarAlt * cos(att.angle[ROLL]) * cos(att.angle[PITCH])
+    BaroAlt = abs((int32_t)sonarAlt * (_cos10(att.angle[ROLL]) * _cos10(att.angle[PITCH]) >> 8)) >> 12;
+  }
   alt.EstAlt = (alt.EstAlt * 6 + BaroAlt * 2) >> 3; // additional LPF to reduce baro noise (faster by 30 µs)
 
   #if (defined(VARIOMETER) && (VARIOMETER != 2)) || !defined(SUPPRESS_BARO_ALTHOLD)

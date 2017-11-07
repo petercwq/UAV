@@ -79,6 +79,9 @@
     /* enable internal I2C pull ups (in most cases it is better to use external pullups) */
     //#define INTERNAL_I2C_PULLUPS
 
+  /**********************************  constant loop time  ******************************/
+  #define LOOP_TIME 2800
+
   /**************************************************************************************/
   /*****************          boards and sensor definitions            ******************/
   /**************************************************************************************/
