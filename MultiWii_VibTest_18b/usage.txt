@@ -1,0 +1,72 @@
+Project: MustiWii_VibTest Arduino Project
+Author:  C. Witte (Gartenflieger2)
+Created: 02-JUL-2011
+Status:  28-JUL-2011
+Version: 18b (Serial Datagram Version 18, Subversion b)
+
+The purpose of this software is to enable Vibration monitoring and common ESC setup of a multicopter based on the 
+MultiWii project.
+
+It is based on the MultiWii_dev20110629 and the serial module of the dev_20010706 and should 
+(hopefully) work with the MultiWiiConf_18 user interface software. It is compatible to serial of dev_20110714, 
+which is already marked as 18.
+
+What's new in 18b:
+
+ - Upon startup no motor is active, you have to toggle the motor number first before you can test the first one. 
+   This is a safety feature.
+ - A new ESC setup function was implemented: If THROTTLE is > MAXTEST, the controller enters the setup mode and 
+   ESCs are driven with 2000. On most ESCs this will put them into programing mode. After that, the THROTTLE value
+   is forwarded to all ESCs (1000 for < MINTEST, 2000 for > MAXTEST) so you can follow any ESC progamming sequence
+   foe all ESCs simultaneously. Owners of OCTOs will appreciate this function more than owners of a BI, I guess.
+
+The plan is as follows:
+
+ Using the RC control rudder/yaw, the motors are activated one after the other. RC control throttle is then used to 
+ drive the motor at diffent speeds.
+
+ In the GUI the values for the Gyro and Acc values (are abused to) represent the vibration level of each sensor. 
+ It is obtained by computing the residual of the true values from the smoothed ones.
+
+Usage: (how it is planned)
+
+1. Setup and flash this software using the Arduino22 program. 
+
+2. Hook up copter to PC, launch MultiWiiConf UI Version dev_20110706 (later 18). Set RC THROTTLE->Min !! and power up 
+   copter to enter vibration monitoring mode, or set RC THROTTLE->Max !! and power up to enter ESC setup mode.
+
+3. Select motor to spin using RUDD->MIN/MAX. LED13 will blink according to motor number and the motor number is shown in the right Debug field.
+
+4. Use THROTTLE to control speed and monitor vibration levels.
+
+5. Apply or remove balancing tape to/from prop.
+
+6. Repeat steps 3. to 5. until satisfied with the results.
+
+7. Swith to next motor using THROTTLE->Min and RUDD->MIN/MAX. Next Motor will spin up at MIN_THROTTLE.
+
+8. Repeat steps until all motors/props are balanced.
+
+
+##############################################################
+
+Done already:
+
+ - program motor activation sequence
+ - test motor activation sequence
+ - program vibration monitoring
+ - test vibration monitoring
+ - program common ESC setup (like as hanging on a normal receiver) using THROTTLE->max on startup
+ - test common ESC setup
+
+Tests done on QuadX w/ WMP clone and BMA020
+
+Left to do:
+
+ - change motor activation sequence to blink more slowly
+
+ - modify sensor initialistion to not use low-pass filters
+
+
+
+   
