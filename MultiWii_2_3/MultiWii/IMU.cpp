@@ -403,6 +403,9 @@ uint8_t getEstimatedAltitude()
 #if (defined(VARIOMETER) && (VARIOMETER != 2)) || !defined(SUPPRESS_BARO_ALTHOLD)
   //P
   int16_t error16 = constrain(AltHold - alt.EstAlt, -300, 300);
+  // could comment this to remove "applyDeadband" because if the sensor alt is trustworthy accurate
+  // the increase the max values of P and D from +-150 to +-200
+  // refer http://www.multiwii.com/forum/viewtopic.php?f=8&t=7850
   applyDeadband(error16, 10); //remove small P parametr to reduce noise near zero position
   BaroPID = constrain((conf.pid[PIDALT].P8 * error16 >> 7), -150, +150);
 
