@@ -324,7 +324,7 @@ RunningMedian baroValues = RunningMedian(29);
 int32_t estBaroAlt = 0;
 
 #if SONAR
-RunningMedian sonarValues = RunningMedian(19);
+RunningMedian sonarValues = RunningMedian(15);
 int32_t estSonarAlt = 0;
 #endif
 
@@ -364,11 +364,12 @@ uint8_t getEstimatedAltitude()
   {
     sonarValues.add(sonarAlt - SONAR_GROUND_OFFSET);
     tmpSonarAlt = sonarValues.getMedian();
-    estSonarAlt = estSonarAlt * SONAR_IMPACT + tmpSonarAlt * (1 - SONAR_IMPACT);
+    estSonarAlt = tmpSonarAlt * SONAR_IMPACT + estSonarAlt * (1 - SONAR_IMPACT);
   }
-  debug[0] = sonarAlt;
-  debug[1] = tmpSonarAlt;
-  debug[2] = estSonarAlt;
+  debug[0] = tmpBaroAlt;
+  debug[1] = estBaroAlt;
+  debug[2] = sonarAlt;
+  debug[3] = estSonarAlt;
 #endif
 
 #if BARO && !SONAR
@@ -397,7 +398,6 @@ uint8_t getEstimatedAltitude()
   {
     alt.EstAlt = estBaroAlt;
   }
-  debug[3] = alt.EstAlt;
 #endif
 
 #if (defined(VARIOMETER) && (VARIOMETER != 2)) || !defined(SUPPRESS_BARO_ALTHOLD)
