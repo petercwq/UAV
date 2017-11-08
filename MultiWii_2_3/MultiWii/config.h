@@ -525,6 +525,19 @@
     #define GPS_WP_RADIUS              200       // if we are within this distance to a waypoint then we consider it reached (distance is in cm)
     #define NAV_SLEW_RATE              30        // Adds a rate control to nav output, will smoothen out nav angle spikes
 
+  /********************************************************************/
+  /****           GENERIC SONAR                                    ****/
+  /********************************************************************/
+
+  // All ranges are in cm
+  #define SONAR_MAX_RANGE 400
+  #define SONAR_GROUND_OFFSET 2       // distance of the sonar sensor to the ground when the copter is on the ground
+  #define SONAR_IMPACT 0.9f           // determines the impact of the current sonar measurement to previous ones (1: immediately adapt to new value, < 1: smoothly adapt to new value)
+
+  // If using baro and sonar, the following is used to determine which value should be used
+  #define SONAR_BARO_FUSION_LC 300                // low cut, fully trustworthy sonar value, below = full sonar
+  #define SONAR_BARO_FUSION_HC SONAR_MAX_RANGE    // high cut, highest sonar value that is still reliable, above = full baro
+  
   /**************************************************************************************/
   /***********************        LCD/OLED - display settings       *********************/
   /**************************************************************************************/
