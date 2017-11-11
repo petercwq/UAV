@@ -535,8 +535,8 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 //#define GYRO_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
 //#define GYRO_LPF_188HZ
 //#define GYRO_LPF_98HZ
-//#define GYRO_LPF_42HZ
-#define GYRO_LPF_20HZ
+#define GYRO_LPF_42HZ
+//#define GYRO_LPF_20HZ
 //#define GYRO_LPF_10HZ
 //#define GYRO_LPF_5HZ       // Use this only in extreme cases, rather change motors and/or props -- setting not available on ITG3200
 
@@ -601,14 +601,13 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    A Value on 200 will give a very distinct transfer */
 //#define ACROTRAINER_MODE 200   // http://www.multiwii.com/forum/viewtopic.php?f=16&t=1944#p17437
 
-
 /********                          Failsafe settings                 ********************/
 /* Failsafe check pulses on four main control channels CH1-CH4. If the pulse is missing or bellow 985us (on any of these four channels)
    the failsafe procedure is initiated. After FAILSAFE_DELAY time from failsafe detection, the level mode is on (if ACC is avaliable),
    PITCH, ROLL and YAW is centered and THROTTLE is set to FAILSAFE_THROTTLE value. You must set this value to descending about 1m/s or so
    for best results. This value is depended from your configuration, AUW and some other params.  Next, after FAILSAFE_OFF_DELAY the copter is disarmed,
    and motors is stopped. If RC pulse coming back before reached FAILSAFE_OFF_DELAY time, after the small quard time the RC control is returned to normal. */
-#define FAILSAFE                                // uncomment  to activate the failsafe function
+//#define FAILSAFE                                // uncomment  to activate the failsafe function
 #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
 #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
 #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
@@ -702,10 +701,10 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    You have to use at least I2CGpsNav code r33 */
 /* all functionnalities allowed by SERIAL_GPS are now available for I2C_GPS: all relevant navigation computations are gathered in the main FC */
 
-//#define I2C_GPS
+#define I2C_GPS
 
 // If your I2C GPS board has Sonar support enabled
-//#define I2C_GPS_SONAR
+#define I2C_GPS_SONAR
 
 /* indicate a valid GPS fix with at least 5 satellites by flashing the LED  - Modified by MIS - Using stable LED (YELLOW on CRIUS AIO) led work as sat number indicator
   - No GPS FIX -> LED blink at speed of incoming GPS frames
@@ -714,7 +713,7 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
 //#define GPS_LED_INDICATOR
 
 //Enables the MSP_WP command set , which is used by WinGUI for displaying an setting up navigation
-//#define USE_MSP_WP
+#define USE_MSP_WP
 
 // HOME position is reset at every arm, uncomment it to prohibit it (you can set home position with GyroCalibration)
 //#define DONT_RESET_HOME_AT_ARM
@@ -887,8 +886,8 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
 /********************************************************************/
 /****                             Buzzer                         ****/
 /********************************************************************/
-#define BUZZER
-#define RCOPTIONSBEEP         // uncomment this if you want the buzzer to beep at any rcOptions change on channel Aux1 to Aux4
+//#define BUZZER
+//#define RCOPTIONSBEEP         // uncomment this if you want the buzzer to beep at any rcOptions change on channel Aux1 to Aux4
 //#define ARMEDTIMEWARNING 600  // (*) Trigger an alarm after a certain time of being armed [s] to save you lipo (if your TX does not have a countdown)
 //#define PILOTLAMP             //Uncomment if you are using a X-Arcraft Pilot Lamp
 
