@@ -60,7 +60,7 @@
     //#define MINTHROTTLE 1120 // for Super Simple ESCs 10A
     //#define MINTHROTTLE 1064 // special ESC (simonk)
     //#define MINTHROTTLE 1050 // for brushed ESCs like ladybird
-    #define MINTHROTTLE 1100 // (*) (**)
+    #define MINTHROTTLE 1060 // (*) (**)
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
@@ -80,7 +80,7 @@
     //#define INTERNAL_I2C_PULLUPS
 
   /**********************************  constant loop time  ******************************/
-  #define LOOP_TIME 2800
+  //#define LOOP_TIME 2800
 
   /**************************************************************************************/
   /*****************          boards and sensor definitions            ******************/
@@ -361,8 +361,7 @@
   /************************        Angele throttle correction         ********************/
   /* Automatically increase throttle based on the angle of the copter
      Original idea by Kraut Rob, first implementation HAdrian							*/
-
-  // #define THROTTLE_ANGLE_CORRECTION 40
+  #define THROTTLE_ANGLE_CORRECTION 40
   
  /*************************        Advanced Headfree Mode             ********************/
  /* In Advanced Headfree mode when the copter is farther than ADV_HEADFREE_RANGE meters then 
