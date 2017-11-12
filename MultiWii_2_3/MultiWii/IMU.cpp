@@ -289,42 +289,42 @@ void getEstimatedAttitude()
     value += deadband;                 \
   }
 
-// 2015.11.30 by XD, x is in 0.1 deg, returns cos * (1 << 10)
-// when x approaches zero, cos(x) = 1 - x ^ 2 / 2, x is in radians
-// https://en.wikipedia.org/wiki/Small-angle_approximation
-// rad = deg / 180 * PI
-// int32_t _cos10(int16_t x)
-// {
-//   // x within [-1800, 1800]
-//   int32_t radTemp = (int32_t)x * 114; // rad = x * ((PI / 1800) << 16), rad within [-205200, 205200]
-//   int32_t rad = radTemp >> 6; // rad ^ 2 within [-657922500, 657922500]
+  // 2015.11.30 by XD, x is in 0.1 deg, returns cos * (1 << 10)
+  // when x approaches zero, cos(x) = 1 - x ^ 2 / 2, x is in radians
+  // https://en.wikipedia.org/wiki/Small-angle_approximation
+  // rad = deg / 180 * PI
+  // int32_t _cos10(int16_t x)
+  // {
+  //   // x within [-1800, 1800]
+  //   int32_t radTemp = (int32_t)x * 114; // rad = x * ((PI / 1800) << 16), rad within [-205200, 205200]
+  //   int32_t rad = radTemp >> 6; // rad ^ 2 within [-657922500, 657922500]
 
-//   int32_t cos20 = ((uint32_t)1 << 20) - ((rad * rad) >> 1);
-//   int32_t result = cos20 >> 10;
+  //   int32_t cos20 = ((uint32_t)1 << 20) - ((rad * rad) >> 1);
+  //   int32_t result = cos20 >> 10;
 
-//   return result;
-// }
+  //   return result;
+  // }
 
-// another sonar alt fusion
-// BaroAlt = ( logBaroGroundPressureSum - log(baroPressureSum) ) * baroGroundTemperatureScale;
-// debug[0] = BaroAlt;
-// debug[1] = sonarAlt;
-// // Nov 8, 2017 WQ Chen - if sonar reads less than 4m (sensor limit 4.5m - safety margin 0.5m), use sonar
-// if ((sonarAlt > 0 && sonarAlt < 400) && 
-// ((att.angle[ROLL] > -60 && att.angle[ROLL] < 60) && (att.angle[PITCH] > -60 && att.angle[PITCH] < 60)))
-// {
-//   // actual alt = sonarAlt * cos(att.angle[ROLL]) * cos(att.angle[PITCH])
-//   BaroAlt = (int32_t)abs(sonarAlt * cos(att.angle[ROLL]) * cos(att.angle[PITCH]));
-// }
-// alt.EstAlt = (alt.EstAlt * 6 + BaroAlt * 2) >> 3; // additional LPF to reduce baro noise (faster by 30 µs)
-// debug[2] = alt.EstAlt;
+  // another sonar alt fusion
+  // BaroAlt = ( logBaroGroundPressureSum - log(baroPressureSum) ) * baroGroundTemperatureScale;
+  // debug[0] = BaroAlt;
+  // debug[1] = sonarAlt;
+  // // Nov 8, 2017 WQ Chen - if sonar reads less than 4m (sensor limit 4.5m - safety margin 0.5m), use sonar
+  // if ((sonarAlt > 0 && sonarAlt < 400) &&
+  // ((att.angle[ROLL] > -60 && att.angle[ROLL] < 60) && (att.angle[PITCH] > -60 && att.angle[PITCH] < 60)))
+  // {
+  //   // actual alt = sonarAlt * cos(att.angle[ROLL]) * cos(att.angle[PITCH])
+  //   BaroAlt = (int32_t)abs(sonarAlt * cos(att.angle[ROLL]) * cos(att.angle[PITCH]));
+  // }
+  // alt.EstAlt = (alt.EstAlt * 6 + BaroAlt * 2) >> 3; // additional LPF to reduce baro noise (faster by 30 µs)
+  // debug[2] = alt.EstAlt;
 
 #if BARO
-RunningMedian baroValues = RunningMedian(29);
+RunningMedian baroValues = RunningMedian(15);
 int32_t estBaroAlt = 0;
 
 #if SONAR
-RunningMedian sonarValues = RunningMedian(15);
+RunningMedian sonarValues = RunningMedian(9);
 int32_t estSonarAlt = 0;
 #endif
 
@@ -406,8 +406,14 @@ uint8_t getEstimatedAltitude()
   // could comment this to remove "applyDeadband" because if the sensor alt is trustworthy accurate
   // the increase the max values of P and D from +-150 to +-200
   // refer http://www.multiwii.com/forum/viewtopic.php?f=8&t=7850
-  applyDeadband(error16, 10); //remove small P parametr to reduce noise near zero position
-  BaroPID = constrain((conf.pid[PIDALT].P8 * error16 >> 7), -150, +150);
+
+  int16_t pd = 150;
+  if (alt.EstAlt > SONAR_MAX_RANGE)
+  {
+    applyDeadband(error16, 10); //remove small P parametr to reduce noise near zero position
+    pd = 200;
+  }
+  BaroPID = constrain((conf.pid[PIDALT].P8 * error16 >> 7), -pd, +pd);
 
   //I
   errorAltitudeI += conf.pid[PIDALT].I8 * error16 >> 6;
@@ -444,8 +450,9 @@ uint8_t getEstimatedAltitude()
 
   //D
   alt.vario = vel;
-  applyDeadband(alt.vario, 5);
-  BaroPID -= constrain(conf.pid[PIDALT].D8 * alt.vario >> 4, -150, 150);
+  if (alt.EstAlt > SONAR_MAX_RANGE)
+    applyDeadband(alt.vario, 5);
+  BaroPID -= constrain(conf.pid[PIDALT].D8 * alt.vario >> 4, -pd, pd);
 #endif
   return 1;
 }

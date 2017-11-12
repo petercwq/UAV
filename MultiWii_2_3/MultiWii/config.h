@@ -64,7 +64,7 @@
 
   /****************************    Motor maxthrottle    *******************************/
     /* this is the maximum value for the ESCs at full power, this value can be increased up to 2000 */
-    #define MAXTHROTTLE 1850
+    #define MAXTHROTTLE 1900
 
   /****************************    Mincommand          *******************************/
     /* this is the value for the ESCs when they are not armed
@@ -80,7 +80,7 @@
     //#define INTERNAL_I2C_PULLUPS
 
   /**********************************  constant loop time  ******************************/
-  //#define LOOP_TIME 2800
+  #define LOOP_TIME 2800
 
   /**************************************************************************************/
   /*****************          boards and sensor definitions            ******************/
@@ -297,8 +297,8 @@
 
     /* interleaving delay in micro seconds between 2 readings WMP/NK in a WMP+NK config
        if the ACC calibration time is very long (20 or 30s), try to increase this delay up to 4000
-       it is relevent only for a conf with NK */
-    #define INTERLEAVING_DELAY 3000
+       it is relevent only for a conf with nunchuk */
+    // #define INTERLEAVING_DELAY 3000
 
     /* when there is an error on I2C bus, we neutralize the values during a short time. expressed in microseconds
        it is relevent only for a conf with at least a WMP */
@@ -374,7 +374,6 @@
    //#define ADVANCED_HEADFREE									//Advanced headfree mode is enabled when this is uncommented
    //#define ADV_HEADFREE_RANGE 15								//Range where advanced headfree mode activated
 
-
   /************************        continuous gyro calibration        ********************/
   /* Gyrocalibration will be repeated if copter is moving during calibration. */
     #define GYROCALIBRATIONFAILSAFE
@@ -442,7 +441,7 @@
 
   /*******************************    OSD Switch    *************************************/
     // This adds a box that can be interpreted by OSD in activation status (to switch on/off the overlay for instance)
-  //#define OSD_SWITCH
+  #define OSD_SWITCH
 
   /**************************************************************************************/
   /***********************                  TX-related         **************************/
@@ -497,7 +496,7 @@
       - No GPS FIX -> LED blink at speed of incoming GPS frames
       - Fix and sat no. bellow 5 -> LED off
       - Fix and sat no. >= 5 -> LED blinks, one blink for 5 sat, two blinks for 6 sat, three for 7 ... */
-    #define GPS_LED_INDICATOR
+    //#define GPS_LED_INDICATOR
 
     #define USE_MSP_WP                        //Enables the MSP_WP command, which is used by WinGUI to display and log Home and Poshold positions
 
@@ -509,16 +508,16 @@
     #define NAV_TAIL_FIRST             false     // true - copter comes in with tail first 
     #define NAV_SET_TAKEOFF_HEADING    true      // true - when copter arrives to home position it rotates it's head to takeoff direction
     
-    
     /* Get your magnetic declination from here : http://magnetic-declination.com/
        Convert the degree+minutes into decimal degree by ==> degree+minutes*(1/60)
        Note the sign on declination it could be negative or positive (WEST or EAST) */
     //#define MAG_DECLINATION  3.96f              //For Budapest Hungary.
-    #define MAG_DECLINATION  -3.696f   //(**)
+    #define MAG_DECLINATION  -3.70f   //(**)
 
     // this is configured to be done in I2C GPS board
     //#define GPS_LEAD_FILTER                      // Adds a forward predictive filterig to compensate gps lag. Code based on Jason Short's lead filter implementation
     
+    // For I2C GPS, FC will tell I2C_GPS board to do the filtering
     #define GPS_FILTERING                        // add a 5 element moving average filter to GPS coordinates, helps eliminate gps noise but adds latency comment out to disable
     #define GPS_LOW_SPEED_D_FILTER              // If speed below .5m/s ignore D term in POSHOLD_RATE, this supposed to filter out noise    
     #define GPS_WP_RADIUS              200       // if we are within this distance to a waypoint then we consider it reached (distance is in cm)
@@ -657,7 +656,6 @@
     #define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
     #define NO_VBAT          16 // Avoid beeping without any battery
 
-
   /********************************************************************/
   /****           powermeter (battery capacity monitoring)         ****/
   /********************************************************************/
@@ -728,7 +726,7 @@
     //                  123456789.123456
 
   /*************      Support multiple configuration profiles in EEPROM     ************/
-  #define MULTIPLE_CONFIGURATION_PROFILES
+  //#define MULTIPLE_CONFIGURATION_PROFILES
 
   /*************      do no reset constants when change of flashed program is detected ***********/
   #define NO_FLASH_CHECK
