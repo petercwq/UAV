@@ -20,6 +20,7 @@ bool GPS_newFrame(char c);
 #if defined(MTK_BINARY16) || defined(MTK_BINARY19)
   bool GPS_MTK_newFrame(uint8_t data);
 #endif
+
 void GPS_distance_cm_bearing(int32_t* lat1, int32_t* lon1, int32_t* lat2, int32_t* lon2,uint32_t* dist, int32_t* bearing);
 static void GPS_calc_velocity(void);
 static void GPS_calc_location_error( int32_t* target_lat, int32_t* target_lng, int32_t* gps_lat, int32_t* gps_lng );
@@ -82,7 +83,6 @@ int32_t LeadFilter::get_position(int32_t pos, int16_t vel, float lag_in_seconds)
 
     return pos + vel_contribution + accel_contribution;
 }
-
 
 LeadFilter xLeadFilter;      // Long GPS lag filter 
 LeadFilter yLeadFilter;      // Lat  GPS lag filter 
@@ -214,9 +214,8 @@ LeadFilter yLeadFilter;      // Lat  GPS lag filter
 // This is the angle from the copter to the "next_WP" location
 // with the addition of Crosstrack error in degrees * 100
 static int32_t nav_bearing;
-// saves the bearing at takeof (1deg = 1) used to rotate to takeoff direction when arrives at home
+// saves the bearing at takeoff (1deg = 1) used to rotate to takeoff direction when arrives at home
 static int16_t nav_takeoff_bearing;
-
 
 #if defined(I2C_GPS)
   /////////////////////////////////////////////////////////////////////////////////////////
@@ -225,9 +224,7 @@ static int16_t nav_takeoff_bearing;
   // Send a command to the I2C GPS module, first parameter command, second parameter wypoint number
   void GPS_I2C_command(uint8_t command, uint8_t wp) {
     uint8_t _cmd;
-      
-    _cmd = (wp << 4) + command;
-    
+    _cmd = (wp << 4) + command; // wp->[0,15]
     i2c_rep_start(I2C_GPS_ADDRESS<<1);
     i2c_write(I2C_GPS_COMMAND);
     i2c_write(_cmd);
@@ -372,7 +369,6 @@ void GPS_NewData(void) {
         } 
           
         //Read GPS data for distance, heading and gps position 
-
         i2c_rep_start(I2C_GPS_ADDRESS<<1);
         i2c_write(I2C_GPS_NAV_BEARING);                                               //Start read from here 2x2 bytes distance and direction
         i2c_rep_start((I2C_GPS_ADDRESS<<1)|1);
