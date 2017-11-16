@@ -27,10 +27,13 @@ extern int32_t AltHold;
 extern int16_t sonarAlt;
 extern int16_t BaroPID;
 extern int16_t errorAltitudeI;
-
 extern int16_t i2c_errors_count;
 extern uint8_t alarmArray[16];
+
+extern int16_t debug[4];
+
 extern global_conf_t global_conf;
+extern conf_t conf;
 
 extern imu_t imu;
 extern analog_t analog;
@@ -39,10 +42,6 @@ extern att_t att;
 #ifdef LOG_PERMANENT
 extern plog_t plog;
 #endif
-
-extern int16_t debug[4];
-
-extern conf_t conf;
 
 extern int16_t annex650_overrun_count;
 extern flags_struct_t f;
