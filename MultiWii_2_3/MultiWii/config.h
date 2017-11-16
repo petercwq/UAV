@@ -668,9 +668,11 @@
        2 - soft: - (good results +-5% for plush and mystery ESCs @ 2S and 3S, not good with SuperSimple ESC)    */
     //#define POWERMETER_SOFT
     //#define POWERMETER_HARD
-    #define PSENSORNULL 510 /* (*) hard only: set to analogRead() value for zero current; for I=0A my sensor
+    //#define PSENSORNULL 510 
+    /* (*) hard only: set to analogRead() value for zero current; for I=0A my sensor
                                    gives 1/2 Vss; that is approx 2.49Volt; */
-    #define PINT2mA 132     /* (*) hard: one integer step on arduino analog translates to mA (example 4.9 / 37 * 1000) ;
+    //#define PINT2mA 132     
+    /* (*) hard: one integer step on arduino analog translates to mA (example 4.9 / 37 * 1000) ;
                                    soft: use fictional value, start with 100.
                                    for hard and soft: larger PINT2mA will get you larger value for power (mAh equivalent) */
 
@@ -729,7 +731,7 @@
   //#define MULTIPLE_CONFIGURATION_PROFILES
 
   /*************      do no reset constants when change of flashed program is detected ***********/
-  #define NO_FLASH_CHECK
+  //#define NO_FLASH_CHECK
 
 /*************************************************************************************************/
 /*****************                                                                 ***************/
@@ -754,7 +756,7 @@
 
   /***********************         Servo Refreshrates            ***********************/
     /* Default 50Hz Servo refresh rate*/
-    #define SERVO_RFR_50HZ
+    //#define SERVO_RFR_50HZ
 
     /* up to 160Hz servo refreshrate .. works with the most analog servos*/
     //#define SERVO_RFR_160HZ
@@ -775,7 +777,7 @@
       SERVO7  = pin 7   (elevator for fixed wing)
       SERVO8  = pin 8   (motor for fixed wing)       */ 
 
-    #define MEGA_HW_PWM_SERVOS
+    //#define MEGA_HW_PWM_SERVOS
  
     /* HW PWM Servo outputs for 32u4 NanoWii, MicroWii etc. - works with either the variable SERVO_RFR_RATE or
      * one of the 3 fixed servo.refresh.rates *
@@ -788,7 +790,7 @@
      */
     //#define A32U4_4_HW_PWM_SERVOS
 
-    #define SERVO_RFR_RATE  50    // In Hz, you can set it from 20 to 400Hz, used only in HW PWM mode for mega and 32u4
+    //#define SERVO_RFR_RATE  50    // In Hz, you can set it from 20 to 400Hz, used only in HW PWM mode for mega and 32u4
     //#define SERVO_PIN5_RFR_RATE  200    // separate yaw pwm rate.
                                           // In Hz, you can set it from 20 to 400Hz, used only in HW PWM mode for 32u4
 
@@ -871,8 +873,8 @@
        Warning: this creates a special version of MultiWii Code
        You cannot fly with this special version. It is only to be used for calibrating ESCs
        Read How To at http://code.google.com/p/multiwii/wiki/ESCsCalibration */
-    #define ESC_CALIB_LOW  MINCOMMAND
-    #define ESC_CALIB_HIGH 2000
+    //#define ESC_CALIB_LOW  MINCOMMAND
+    //#define ESC_CALIB_HIGH 2000
     //#define ESC_CALIB_CANNOT_FLY  // uncomment to activate
 
   /****           internal frequencies                             ****/
@@ -880,11 +882,11 @@
        time base is main loop cycle time - a value of 6 means to trigger the action every 6th run through the main loop
        example: with cycle time of approx 3ms, do action every 6*3ms=18ms
        value must be [1; 65535] */
-    #define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
-    #define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
-    #define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
-    #define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
-    #define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
+    // #define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
+    // #define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
+    // #define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
+    // #define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
+    // #define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
 
   /********************************************************************/
   /****           Dynamic Motor/Prop Balancing                     ****/
