@@ -1,0 +1,6 @@
+{
+    "port": "/dev/cu.Bluetooth-Incoming-Port",
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328",
+    "sketch": "MPU6050.ino"
+}
