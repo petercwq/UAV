@@ -258,7 +258,7 @@
     /* camera trigger function : activated via Rc Options in the GUI, servo output=A2 on promini */
     // trigger interval can be changed via (*GUI*) or via AUX channel
     //#define CAMTRIG
-    #define CAM_TIME_HIGH 1000   // the duration of HIGH state servo expressed in ms
+    //#define CAM_TIME_HIGH 1000   // the duration of HIGH state servo expressed in ms
 
 /*************************************************************************************************/
 /*****************                                                                 ***************/
@@ -330,8 +330,8 @@
       //#define MPU6050_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
       //#define MPU6050_LPF_188HZ
       //#define MPU6050_LPF_98HZ
-      #define MPU6050_LPF_42HZ
-      //#define MPU6050_LPF_20HZ
+      //#define MPU6050_LPF_42HZ
+      #define MPU6050_LPF_20HZ
       //#define MPU6050_LPF_10HZ
       //#define MPU6050_LPF_5HZ       // Use this only in extreme cases, rather change motors and/or props
 
@@ -361,7 +361,7 @@
   /************************        Angele throttle correction         ********************/
   /* Automatically increase throttle based on the angle of the copter
      Original idea by Kraut Rob, first implementation HAdrian							*/
-  #define THROTTLE_ANGLE_CORRECTION 40
+  #define THROTTLE_ANGLE_CORRECTION 30
   
  /*************************        Advanced Headfree Mode             ********************/
  /* In Advanced Headfree mode when the copter is farther than ADV_HEADFREE_RANGE meters then 
@@ -397,10 +397,9 @@
        and motors is stopped. If RC pulse coming back before reached FAILSAFE_OFF_DELAY time, after the small quard time the RC control is returned to normal. */
     //#define FAILSAFE                                // uncomment  to activate the failsafe function
     #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
-    #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
-    #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
-    
-    #define FAILSAFE_DETECT_TRESHOLD  985
+    // #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
+    // #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
+    // #define FAILSAFE_DETECT_TRESHOLD  985
 
 
   /*****************                DFRobot LED RING    *********************************/
@@ -441,7 +440,7 @@
 
   /*******************************    OSD Switch    *************************************/
     // This adds a box that can be interpreted by OSD in activation status (to switch on/off the overlay for instance)
-  #define OSD_SWITCH
+  //#define OSD_SWITCH
 
   /**************************************************************************************/
   /***********************                  TX-related         **************************/
