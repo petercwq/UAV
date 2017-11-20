@@ -1,0 +1,6 @@
+{
+    "port": "/dev/cu.usbserial-A70234SO",
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328",
+    "sketch": "KV_Team_OSD/KV_Team_OSD.ino"
+}
