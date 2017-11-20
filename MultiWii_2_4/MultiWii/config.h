@@ -609,9 +609,9 @@ At this moment you can use this function only with WinGUI 2.3 release. MultiWiiC
    and motors is stopped. If RC pulse coming back before reached FAILSAFE_OFF_DELAY time, after the small quard time the RC control is returned to normal. */
 //#define FAILSAFE                                // uncomment  to activate the failsafe function
 #define FAILSAFE_DELAY     10                     // Guard time for failsafe activation after signal lost. 1 step = 0.1sec - 1sec in example
-#define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
-#define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
-#define FAILSAFE_DETECT_TRESHOLD  985
+// #define FAILSAFE_OFF_DELAY 200                    // Time for Landing before motors stop in 0.1sec. 1 step = 0.1sec - 20sec in example
+// #define FAILSAFE_THROTTLE  (MINTHROTTLE + 200)    // (*) Throttle level used for landing - may be relative to MINTHROTTLE - as in this case
+// #define FAILSAFE_DETECT_TRESHOLD  985
 
 
 /*****************                DFRobot LED RING    *********************************/
@@ -988,7 +988,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     //#define MULTIPLE_CONFIGURATION_PROFILES
 
     /*************      do no reset constants when change of flashed program is detected ***********/
-    #define NO_FLASH_CHECK
+    //#define NO_FLASH_CHECK
 
     /*************************************************************************************************/
     /*****************                                                                 ***************/
@@ -996,7 +996,7 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
     /*****************                                                                 ***************/
     /*************************************************************************************************/
 
-    #define VBAT_PRESCALER 16 // set this to 8 if vbatscale would exceed 255
+    //#define VBAT_PRESCALER 16 // set this to 8 if vbatscale would exceed 255
 
     /**************************************************************************************/
     /********   special ESC with extended range [0-2000] microseconds  ********************/
@@ -1155,11 +1155,11 @@ Also note, that maqgnetic declination changes with time, so recheck your value e
        time base is main loop cycle time - a value of 6 means to trigger the action every 6th run through the main loop
        example: with cycle time of approx 3ms, do action every 6*3ms=18ms
        value must be [1; 65535] */
-    #define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
-    #define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
-    #define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
-    #define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
-    #define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
+    // #define LCD_TELEMETRY_FREQ 23       // to send telemetry data over serial 23 <=> 60ms <=> 16Hz (only sending interlaced, so 8Hz update rate)
+    // #define LCD_TELEMETRY_AUTO_FREQ  967// to step to next telemetry page 967 <=> 3s
+    // #define PSENSOR_SMOOTH 16           // len of averaging vector for smoothing the PSENSOR readings; should be power of 2; set to 1 to disable
+    // #define VBAT_SMOOTH 16              // len of averaging vector for smoothing the VBAT readings; should be power of 2; set to 1 to disable
+    // #define RSSI_SMOOTH 16              // len of averaging vector for smoothing the RSSI readings; should be power of 2; set to 1 to disable
 
     /********************************************************************/
     /****           Dynamic Motor/Prop Balancing                     ****/
