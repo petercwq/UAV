@@ -5,7 +5,7 @@
   // Variables
  #define METRIC 0
  #define IMPERIAL 1
- #define MAXSCREENITEMS 26 // 28 w/ GPS alt & Temperature (Movable items)
+ #define MAXSCREENITEMS 28 // 28 w/ GPS alt & Temperature (Movable items)
  
  //Analog input defines
  // **** WiteSpy hardware **** //
