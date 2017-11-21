@@ -1,0 +1,4 @@
+{
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328"
+}
