@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:pro",
+    "configuration": "cpu=16MHzatmega328",
+    "sketch": "MWOSD-1.7.2.0\\MW_OSD\\MW_OSD.ino"
+}
