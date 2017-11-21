@@ -440,7 +440,7 @@
 
   /*******************************    OSD Switch    *************************************/
     // This adds a box that can be interpreted by OSD in activation status (to switch on/off the overlay for instance)
-  //#define OSD_SWITCH
+  #define OSD_SWITCH
 
   /**************************************************************************************/
   /***********************                  TX-related         **************************/
