@@ -2,9 +2,9 @@ FPV Racing Components
 
 Frame:
 kingkong 210纯碳机架
-- 210GT w/ PDB LED 168RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.49.7dfd891drlXH28&id=528618677943&ns=1&abbucket=14#detail)
-- 210GT 118RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.20.f1769b83LgMY1&id=538580530207&ns=1&abbucket=14#detail)
-- 210 SANDWICH 168RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.20.f1769b83LgMY1&id=538580530207&ns=1&abbucket=14#detail)
+- 210GT w/ PDB LED 163RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.37.392699c2xMUz9o&id=530619709003&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.49.7dfd891drlXH28&id=528618677943&ns=1&abbucket=14#detail)
+- 210GT 113RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.37.392699c2xMUz9o&id=530619709003&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.20.f1769b83LgMY1&id=538580530207&ns=1&abbucket=14#detail)
+- QAV210 64RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.98.7663c971RUiQvH&id=537169593553&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.41.7663c971RUiQvH&id=532021700135&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.33.7663c971RUiQvH&id=531833425617&ns=1&abbucket=2#detail)
 
 qav250 pro纯碳机架
 非折叠 QAV250 KIM250 Q250
@@ -15,16 +15,32 @@ Motors:
 1806 KV2300
 - xx
 220x KV2300
-- 花牌2403
-- 银燕mt2204
-- 银燕mt2205
-- 银燕2205红底裤
+- kingkong FORCE250 338RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.10.5ad101adQYldrZ&id=538059387819&ns=1&abbucket=2#detail)
+    -- KINGKONG 2205KV2300 正反各2个             
+    -- KINGKONG BLHeli20A电调 4个
+    -- 6045红色桨 5对               
+    -- 5045红色桨 5对              
+    -- 黑色天线座 1                     
+    -- 3*200黑色扎带 20根                 
+    -- 子弹头快拆碳纤扳手  1把                    
+    -- BLHeli调参器 1        
+    -- 5v/12v分电板 1         
+    -- 4MM热缩管 1段                  
+    -- 16AWG硅胶线 红黑各 1段
+    -- 22红色电机防撞座  4个
+- EMAX银燕RS2205S电机 BULLET30A电调套装 518RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.19.5fb23e692bgDRf&id=548499902391&ns=1&abbucket=2#detail)
+- EMAX银燕R2205 *4 240RMB（https://item.taobao.com/item.htm?spm=a230r.1.14.11.5ab069cdsg75ww&id=528247982964&ns=1&abbucket=2#detail）
+- EMAX银燕RS2205 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.44.32f7c80brT1yPm&id=528928656542&ns=1&abbucket=2#detail)
+- 朗宇R2205 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.5.5f9d465av7L8PR&id=537473998493&ns=1&abbucket=2#detail)
+- 朗宇R2205 + R25A BLHeli ESC 380RMB
+
 - DYS SE2205
 - 致盈动力 GT2203 KV2300 80RMB * 4
 - 杂牌 2206 kv 2300 4*25 RMB
 - cobra2206电机 kv2300 4*123RMB
 
 ESC: >15A BLHeli固件性能上完胜simonK固件
+小蜜蜂BLHeli-S 30A Dshot * 4 160RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.18.6a2b86b7lYdmxw&id=551580584334&ns=1&abbucket=2#detail)
 BLHELI 12A 4*25 RMB
 银燕simonk12a
 电调好盈20A或者30A 45RMB * 4
@@ -32,7 +48,7 @@ bls20A电调 4*80RMB
 好盈或者kingkong
 
 VT:
-TS5828 600mw 43RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.5.4fc14cefywhUhd&id=542208555873&ns=1&abbucket=14#detail)
+TS5828 600mw 43RMB (https://item.taobao.com/item.htm?spm=2013.1.w5003-16867204258.3.1f1a33320Nwfpl&id=542208555873&scene=taobao_shop)
 TS835/832 600mw 64RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.5.375c4329FnFzOa&id=41025308345&ns=1&abbucket=14#detail)
 5.8G 200mW 加蘑菇天线 78RMB (https://item.taobao.com/item.htm?spm=2013.1.20141003.7.287dd5976EyANE&scm=1007.10011.70203.100200300000001&id=42894354886&pvid=c2a6c646-63c8-41c8-bfef-7202f3277d6c)
 
