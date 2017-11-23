@@ -5,11 +5,7 @@ kingkong 210纯碳机架
 - 210GT w/ PDB LED 163RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.37.392699c2xMUz9o&id=530619709003&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.49.7dfd891drlXH28&id=528618677943&ns=1&abbucket=14#detail)
 - 210GT 113RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.37.392699c2xMUz9o&id=530619709003&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.20.f1769b83LgMY1&id=538580530207&ns=1&abbucket=14#detail)
 - QAV210 64RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.98.7663c971RUiQvH&id=537169593553&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.41.7663c971RUiQvH&id=532021700135&ns=1&abbucket=2#detail, https://item.taobao.com/item.htm?spm=a230r.1.14.33.7663c971RUiQvH&id=531833425617&ns=1&abbucket=2#detail)
-
-qav250 pro纯碳机架
-非折叠 QAV250 KIM250 Q250
-折叠 Ge260Z QAV240
-xr215架子 300RMB
+- QAV210 58RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.119.6cd83398SAd5NK&id=536112869555&ns=1&abbucket=2#detail)
 
 Motors:
 1806 KV2300
@@ -65,17 +61,18 @@ foxeer1177摄像头 220RMB
 
 FC:
 Self design MPU6050 + Arduino Pro Mini
-CC3D+减震座 60 RMB
-SP F3 Acro product version : http://goo.gl/Ix1oge
-SP F3 Deluxe version : http://goo.gl/QvTzXf
-f3竞赛飞控 80RMB
-
+CC3D飞控 45RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.181.42ee643dm1dtKD&id=41657306195&ns=1&abbucket=2#detail)
+CC3D+减震座 60RMB
+SP F3 Acro 55RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.63.45b9b6be89zilu&id=535289915166&ns=1&abbucket=2#detail)
+SP F3 Deluxe 113RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.63.45b9b6be89zilu&id=535289915166&ns=1&abbucket=2#detail)
+MINI CC3D 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.174.45b9b6be89zilu&id=520230420177&ns=1&abbucket=2#detail
 PDB & OSD:
 Naze32 F3 CC3D - PDB&BEC&OSD 
 -- 69RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.104.d269919Qx0uKE&id=560224241292&ns=1&abbucket=6#detail)
 -- 59RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.37.43f7e3eeYEcwZC&id=532682085492&ns=1&abbucket=6#detail)
 XDRC穿越机并线板5V 12V双路BEC 18RMB (https://item.taobao.com/item.htm?id=553601001147&ali_refid=a3_430582_1006:1104170955:N:%E5%88%86%E7%94%B5%E6%9D%BF:16b9a42757f7b4ce429311fe0c92bb67&ali_trackid=1_16b9a42757f7b4ce429311fe0c92bb67&spm=a230r.1.14.3#detail)
 Matek V3.1 V2.1 22RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.49.1bcc568exoqikQ&id=521937932473&ns=1&abbucket=6#detail)
+mini OSD 39RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.279.42ee643dm1dtKD&id=525716946128&ns=1&abbucket=2#detail)
 
 BAT:
 4s 2200 35C 72RMB (https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-5015033499.9.e5a8683JL6MRb&id=555813482156)
