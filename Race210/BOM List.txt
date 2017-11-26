@@ -92,10 +92,11 @@ TC:
 FS-TH9X-B (Have)
 
 To Buy：
-- shock absorption for Camera
-- arduino board (mini, micro)
-- the LCD background light for FS-TH9X
-- Frame：Kingkong 210GT Kit with PDB -> 160
+- shock absorption for Camera -> (3PS: 11+3.8x2) [Ordered]
+- F450 feet -> 8 [Ordered]
+- arduino board (mini, micro) [Try the I2C Nav Board]
+- the LCD background light for FS-TH9X [Use the light from old Blackberry phone]
+- Frame：Kingkong 210GT Kit with PDB -> 153 
 - Motor + ESC: 朗宇R2205 + R25 * 4 -> 380
 - BAT: 4s 2200 35C -> 72
 - TC RX: FS-R6B -> 45
