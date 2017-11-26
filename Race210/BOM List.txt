@@ -30,7 +30,6 @@ Motors:
 - EMAX银燕RS2205 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.44.32f7c80brT1yPm&id=528928656542&ns=1&abbucket=2#detail)
 - 朗宇R2205 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.5.5f9d465av7L8PR&id=537473998493&ns=1&abbucket=2#detail)
 - 朗宇R2205 + R25A BLHeli ESC 380RMB （http://m.tb.cn/h.DCqGFQ）
-
 - DYS SE2205
 - 致盈动力 GT2203 KV2300 80RMB * 4
 - 杂牌 2206 kv 2300 4*25 RMB
@@ -77,7 +76,6 @@ Matek V3.1 V2.1 22RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.49.1bcc56
 mini OSD 39RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.279.42ee643dm1dtKD&id=525716946128&ns=1&abbucket=2#detail)
 MATEK FCHUB-6S 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.20.1e703329v9ivRm&id=550519049961&ns=1&abbucket=6#detail)
 
-
 BAT:
 4s 2200 35C 72RMB (https://item.taobao.com/item.htm?spm=a1z10.3-c.w4002-5015033499.9.e5a8683JL6MRb&id=555813482156)
 
@@ -92,3 +90,12 @@ FS-R6B 45RMB
 
 TC:
 FS-TH9X-B (Have)
+
+To Buy：
+- shock absorption for Camera
+- arduino board (mini, micro)
+- the LCD background light for FS-TH9X
+- Frame：Kingkong 210GT Kit with PDB -> 160
+- Motor + ESC: 朗宇R2205 + R25 * 4 -> 380
+- BAT: 4s 2200 35C -> 72
+- TC RX: FS-R6B -> 45

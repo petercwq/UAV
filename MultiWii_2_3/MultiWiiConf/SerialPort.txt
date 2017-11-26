@@ -1,1 +1,1 @@
-/dev/tty.wchusbserial1410;115200
+/dev/tty.CRIUS_BT-DevB;115200
