@@ -260,6 +260,58 @@
     //#define CAMTRIG
     //#define CAM_TIME_HIGH 1000   // the duration of HIGH state servo expressed in ms
 
+
+/*************************************************************************************************/
+/*****************                                                                 ***************/
+/****************  SECTION  3 - RC SYSTEM SETUP                                            *******/
+/*****************                                                                 ***************/
+/*************************************************************************************************/
+
+  /* note: no need to uncomment something in this section if you use a standard receiver */
+
+  /**************************************************************************************/
+  /********                       special receiver types             ********************/
+  /**************************************************************************************/
+
+    /****************************    PPM Sum Reciver    ***********************************/
+      /* The following lines apply only for specific receiver with only one PPM sum signal, on digital PIN 2
+         Select the right line depending on your radio brand. Feel free to modify the order in your PPM order is different */
+      //#define SERIAL_SUM_PPM         PITCH,YAW,THROTTLE,ROLL,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For Graupner/Spektrum
+      //#define SERIAL_SUM_PPM         ROLL,PITCH,THROTTLE,YAW,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For Robe/Hitec/Futaba
+      //#define SERIAL_SUM_PPM         ROLL,PITCH,YAW,THROTTLE,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For Multiplex
+      //#define SERIAL_SUM_PPM         PITCH,ROLL,THROTTLE,YAW,AUX1,AUX2,AUX3,AUX4,8,9,10,11 //For some Hitec/Sanwa/Others
+
+      // Uncommenting following line allow to connect PPM_SUM receiver to standard THROTTLE PIN on MEGA boards (eg. A8 in CRIUS AIO)
+      //#define PPM_ON_THROTTLE
+
+    /**********************    Spektrum Satellite Reciver    *******************************/
+      /* The following lines apply only for Spektrum Satellite Receiver
+         Spektrum Satellites are 3V devices.  DO NOT connect to 5V!
+         For MEGA boards, attach sat grey wire to RX1, pin 19. Sat black wire to ground. Sat orange wire to Mega board's 3.3V (or any other 3V to 3.3V source).
+         For PROMINI, attach sat grey to RX0.  Attach sat black to ground. */
+      //#define SPEKTRUM 1024
+      //#define SPEKTRUM 2048
+      //#define SPEK_SERIAL_PORT 1    // Forced to 0 on Pro Mini and single serial boards; Set to your choice of 0, 1, or 2 on any Mega based board (defaults to 1 on Mega).
+      //**************************
+      // Defines that allow a "Bind" of a Spektrum or Compatible Remote Receiver (aka Satellite) via Configuration GUI.
+      //   Bind mode will be same as declared above, if your TX is capable.
+      //   Ground, Power, and Signal must come from three adjacent pins. 
+      //   By default, these are Ground=4, Power=5, Signal=6.  These pins are in a row on most MultiWii shield boards. Pins can be overriden below.  
+      //   Normally use 3.3V regulator is needed on the power pin!!  If your satellite hangs during bind (blinks, but won't complete bind with a solid light), go direct 5V on all pins. 
+      //**************************
+      //   For Pro Mini, the connector for the Satellite that resides on the FTDI can be unplugged and moved to these three adjacent pins. 
+      //#define SPEK_BIND             //Un-Comment for Spektrum Satellie Bind Support.  Code is ~420 bytes smaller without it. 
+      //#define SPEK_BIND_GROUND 4
+      //#define SPEK_BIND_POWER  5
+      //#define SPEK_BIND_DATA   6
+
+    /*******************************    SBUS RECIVER    ************************************/
+      /* The following line apply only for Futaba S-Bus Receiver on MEGA boards at RX1 only (Serial 1) or PROMICRO boards.
+         You have to invert the S-Bus-Serial Signal e.g. with a Hex-Inverter like IC SN74 LS 04 */
+      //#define SBUS
+      //#define SBUS_SERIAL_PORT 1
+      //#define SBUS_MID_OFFSET 988 //SBUS Mid-Point at 1500
+
 /*************************************************************************************************/
 /*****************                                                                 ***************/
 /****************  SECTION  4 - ALTERNATE CPUs & BOARDS                                    *******/
