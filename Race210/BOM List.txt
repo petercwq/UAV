@@ -95,14 +95,24 @@ FS-R6B 45RMB
 TC:
 FS-TH9X-B (Have)
 
-To Buy：
-- shock absorption for Camera -> (3PS: 11+3.8x2) [Ordered]
-- F450 feet -> 8 [Ordered]
-- arduino board (mini, micro) [Try the I2C Nav Board]
-- the LCD background light for FS-TH9X [Use the light from old Blackberry phone]
-- Frame：Kingkong 210GT Kit with PDB -> 153 [Ordered]
-- 非凡T1/PWM/PPM/SBUS/DBUS/DJI Converter -> 60 [Ordered]
-- Motor + ESC: 朗宇R2205 + R25 * 4 -> 380
-- BAT: 4s 2200 35C -> 72
-- TC RX: FS-R6B -> 45
-- FC: 
+To Buy:
+- TC: FlySky TH9X + FS-R8B
+- TC: LCD background light for FS-TH9X [Use the light from old Blackberry phone]
+- TC: Bracket for Phone -> 27.5RMB
+- 非凡T1/PWM/PPM/SBUS/DBUS/DJI Converter -> 62RMB
+- TC RX: FS-R6B -> 52.7RMB 
+
+- Frame: F450 feet -> 8RMB
+- Frame：Kingkong 210GT Kit with PDB -> 153RMB
+
+- FC: OMNIBUS F4 V3 -> 100RMB
+- OSD: 3DR Minim OSD -> 45.2RMB
+
+- VTX: TS832 600mW + Clover ANT -> 78.4RMB
+- VRX: RC832 + Four Leaf Clover ANT + FPV Box -> 144.5RMB
+- FPV 700TVL -> 31RMB
+- Shock absorption for Camera -> 18RMB
+
+- SunnySky R2205 FPV Edition *4 -> 208RMB
+- ESC: UFO 30A Dshot1200 Blheli_32 w/ Protector -> 200RMB
+- BAT: 4s 2200 35C -> 72RMB
