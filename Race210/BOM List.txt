@@ -36,9 +36,9 @@ Motors:
 - cobra2206电机 kv2300 4*123RMB
 
 ESC: >15A BLHeli固件性能上完胜simonK固件
+FoxRacer 32Bit 30A DSHOT1200/ONESHOT125 * 4 178RMB
+UFO 30A Dshot1200 Blheli_32 50RMB * 4 200RMB
 小蜜蜂BLHeli-S 30A Dshot * 4 160RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.18.6a2b86b7lYdmxw&id=551580584334&ns=1&abbucket=2#detail)
-BLHELI 12A 4*25 RMB
-银燕simonk12a
 电调好盈20A或者30A 45RMB * 4
 bls20A电调 4*80RMB
 好盈或者kingkong
@@ -66,6 +66,10 @@ CC3D+减震座 60RMB
 SP F3 Acro 55RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.63.45b9b6be89zilu&id=535289915166&ns=1&abbucket=2#detail)
 SP F3 Deluxe 113RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.63.45b9b6be89zilu&id=535289915166&ns=1&abbucket=2#detail)
 MINI CC3D 50RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.174.45b9b6be89zilu&id=520230420177&ns=1&abbucket=2#detail
+OMNIBUS F4 Pro V2 108RMB ()
+OMNIBUS F4 V3 108RMB ()
+Beerotor F4 (http://beerotor.com/)
+BeeRotor F4 mini 128RMB (https://item.taobao.com/item.htm?spm=a230r.1.14.20.25b7b6b2Il5ln2&id=554355644398&ns=1&abbucket=3#detail)
 
 PDB & OSD:
 Naze32 F3 CC3D - PDB&BEC&OSD 
