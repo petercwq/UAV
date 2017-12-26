@@ -584,7 +584,7 @@
   #define SONAR_IMPACT 0.7f           // determines the impact of the current sonar measurement to previous ones (1: immediately adapt to new value, < 1: smoothly adapt to new value)
 
   // If using baro and sonar, the following is used to determine which value should be used
-  #define SONAR_BARO_FUSION_LC 300                // low cut, fully trustworthy sonar value, below = full sonar
+  #define SONAR_BARO_FUSION_LC 350                // low cut, fully trustworthy sonar value, below = full sonar
   #define SONAR_BARO_FUSION_HC SONAR_MAX_RANGE    // high cut, highest sonar value that is still reliable, above = full baro
   
   /**************************************************************************************/
